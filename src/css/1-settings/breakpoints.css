@@ -1,0 +1,30 @@
+/**
+ * NanoBoy — Points de rupture (référence unique).
+ *
+ * ⚠️ Les custom properties NE sont PAS utilisables dans les conditions
+ * @media (la spec CSS ne le permet pas). Ce fichier sert donc de :
+ *   1. source de vérité documentée des seuils (à recopier à l'identique
+ *      dans les @media des autres partials — mobile-first, min-width) ;
+ *   2. exposition des valeurs en --nb-bp-* pour le JS (matchMedia) et
+ *      d'éventuelles container queries.
+ *
+ * Mobile-first : le style de base vise le mobile ; on monte en largeur via
+ *   @media (min-width: 48rem) { … }   ← seuil --nb-bp-md
+ *
+ * Échelle (en rem, base 16px) :
+ *   sm  30rem  = 480px   téléphones larges
+ *   md  48rem  = 768px   tablettes (sidebar passe à côté du contenu)
+ *   lg  64rem  = 1024px  petits écrans desktop
+ *   xl  75rem  = 1200px  conteneur boxed à sa largeur cible
+ *
+ * Couche : settings.
+ */
+
+@layer settings {
+	:root {
+		--nb-bp-sm: 30rem; /* 480px */
+		--nb-bp-md: 48rem; /* 768px */
+		--nb-bp-lg: 64rem; /* 1024px */
+		--nb-bp-xl: 75rem; /* 1200px */
+	}
+}

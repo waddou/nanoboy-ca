@@ -1,0 +1,23 @@
+/**
+ * NanoBoy — Conteneur boxed centré.
+ *
+ * Largeur cible ~1100–1200px (token --nb-container-max, miroir de
+ * config.php layout.container_max). Gouttière latérale sur mobile pour ne
+ * jamais coller aux bords. Réutilisé par header, main, footer.
+ *
+ * Couche : layout.
+ */
+
+@layer layout {
+	.container {
+		inline-size: 100%;
+		max-inline-size: var(--nb-container-max);
+		margin-inline: auto;
+		padding-inline: var(--nb-container-pad);
+	}
+
+	/* Variante resserrée (contenu de lecture seule, ex. article). */
+	.container--narrow {
+		max-inline-size: 768px;
+	}
+}

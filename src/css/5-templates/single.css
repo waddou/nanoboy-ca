@@ -1,0 +1,140 @@
+/**
+ * NanoBoy — Articles seuls et pages standards.
+ *
+ * Couche : templates.
+ */
+
+@layer templates {
+	/* En-tête ouvert (sans boîte) : cohérent avec .listing-header. */
+	.entry__header {
+		margin-block-end: var(--nb-space-4);
+	}
+
+	.entry__title {
+		margin-block-start: 0;
+		margin-block-end: var(--nb-space-2);
+	}
+
+	.entry__title::after {
+		display: block;
+		inline-size: var(--nb-space-6);
+		block-size: 4px;
+		margin-block-start: var(--nb-space-2);
+		content: "";
+		background-color: var(--nb-color-accent);
+		border-radius: var(--nb-radius-pill);
+	}
+
+	.post-meta {
+		display: none;
+		flex-wrap: wrap;
+		gap: var(--nb-space-1) var(--nb-space-3);
+		color: var(--nb-color-muted);
+		font-size: var(--nb-font-size-sm);
+	}
+
+	.entry__content {
+		padding: var(--nb-space-5);
+		background-color: var(--nb-color-surface);
+		border: var(--nb-border);
+		border-radius: var(--nb-radius-lg);
+		font-size: var(--nb-font-size-lg);
+	}
+
+	.entry__content > * + * {
+		margin-block-start: 1.35em;
+	}
+
+	.entry__content > :first-child {
+		margin-block-start: 0;
+	}
+
+	.entry__content > :last-child {
+		margin-block-end: 0;
+	}
+
+	.entry__content img {
+		block-size: auto;
+	}
+
+	.entry__pages {
+		margin-block-start: var(--nb-space-5);
+		padding-block-start: var(--nb-space-3);
+		border-block-start: var(--nb-border);
+	}
+
+	.entry__footer {
+		margin-block-start: var(--nb-space-5);
+		padding: var(--nb-space-3);
+		background-color: var(--nb-color-bg-subtle);
+		border: var(--nb-border);
+		border-radius: var(--nb-radius);
+	}
+
+	.entry__tags-label {
+		font-weight: var(--nb-font-weight-bold);
+	}
+
+	.related-posts {
+		margin-block-start: var(--nb-space-6);
+		padding-block-start: var(--nb-space-5);
+		border-block-start: var(--nb-border);
+	}
+
+	.related-posts__title {
+		margin-block-start: 0;
+	}
+
+	.related-posts__grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--nb-space-4);
+	}
+
+	.related-posts__item {
+		overflow: hidden;
+		border: var(--nb-border);
+		border-radius: var(--nb-radius);
+	}
+
+	.related-posts__media {
+		display: block;
+		overflow: hidden;
+		aspect-ratio: var(--nb-related-image-ratio);
+		background-color: var(--nb-color-bg-subtle);
+	}
+
+	.related-posts__image {
+		inline-size: 100%;
+		block-size: 100%;
+		object-fit: cover;
+	}
+
+	.related-posts__item-title {
+		margin: 0;
+		padding: var(--nb-space-3);
+		font-size: var(--nb-font-size-lg);
+	}
+
+	.related-posts__item-title a {
+		color: var(--nb-color-text-strong);
+		text-decoration: none;
+	}
+
+	.related-posts__item-title a:hover,
+	.related-posts__item-title a:focus {
+		color: var(--nb-color-accent);
+	}
+
+	@media (min-width: 40rem) {
+		.related-posts__grid {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+	}
+
+	@media (min-width: 48rem) { /* --nb-bp-md */
+		.post-meta {
+			display: flex;
+		}
+	}
+}

@@ -1,0 +1,330 @@
+# Copyright (C) 2026 NanoBoy
+# This file is distributed under the same license as the NanoBoy package.
+msgid ""
+msgstr ""
+"Project-Id-Version: NanoBoy 1.0.0\n"
+"Report-Msgid-Bugs-To: https://choix-assurances.fr/\n"
+"POT-Creation-Date: 2026-06-09 00:00+0100\n"
+"PO-Revision-Date: 2026-06-09 00:00+0100\n"
+"Last-Translator: Choix Assurances\n"
+"Language-Team: English (United States)\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: nanoboy\n"
+
+#: 404.php:22, inc/template-helpers.php:197
+msgid "Page not found"
+msgstr "Page not found"
+
+#: 404.php:24
+msgid ""
+"The page you are looking for may have been moved, deleted, or never "
+"existed. Try a search to continue."
+msgstr ""
+"The page you are looking for may have been moved, deleted, or never "
+"existed. Try a search to continue."
+
+#: archive.php:58
+msgid "No articles were found in this archive."
+msgstr "No articles were found in this archive."
+
+#: comments.php:24
+#. translators: %s: number of comments.
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] "%s comment"
+msgstr[1] "%s comments"
+
+#: comments.php:47
+msgid "Comments are closed."
+msgstr "Comments are closed."
+
+#: comments.php:56
+msgid "Your email address will not be published."
+msgstr "Your email address will not be published."
+
+#: front-page.php:51
+msgid "Featured article"
+msgstr "Featured article"
+
+#: front-page.php:59, index.php:17
+msgid "Latest articles"
+msgstr "Latest articles"
+
+#: front-page.php:87
+msgid "No articles have been published yet."
+msgstr "No articles have been published yet."
+
+#: header.php:28
+msgid "Skip to content"
+msgstr "Skip to content"
+
+#: index.php:53
+msgid "No articles were found."
+msgstr "No articles were found."
+
+#: page.php:36
+msgid "Page sections"
+msgstr "Page sections"
+
+#: search.php:24, inc/template-helpers.php:191
+#. translators: %s: search query.
+#. translators: %s: search query.
+msgid "Search results for: %s"
+msgstr "Search results for: %s"
+
+#: search.php:44
+msgid "No results matched your search. Try different keywords."
+msgstr "No results matched your search. Try different keywords."
+
+#: searchform.php:18
+msgid "Search for:"
+msgstr "Search for:"
+
+#: searchform.php:25
+msgid "Search…"
+msgstr "Search…"
+
+#: searchform.php:27, sidebar.php:27
+msgid "Search"
+msgstr "Search"
+
+#: sidebar.php:17
+msgid "Sidebar"
+msgstr "Sidebar"
+
+#: sidebar.php:32
+msgid "Monthly archives"
+msgstr "Monthly archives"
+
+#: single.php:40
+msgid "Article pages"
+msgstr "Article pages"
+
+#: single.php:52
+msgid "Tags:"
+msgstr "Tags:"
+
+#: inc/ads.php:43
+msgid "Advertisement at the top of the sidebar"
+msgstr ""
+
+#: inc/ads.php:52
+msgid "Advertisement in the posts list"
+msgstr "Advertisement in the posts list"
+
+#: inc/ads.php:61
+msgid "Second advertisement in the posts list"
+msgstr ""
+
+#: inc/ads.php:70
+msgid "Advertisement before the article content"
+msgstr ""
+
+#: inc/ads.php:79
+msgid "Advertisement after the article"
+msgstr "Advertisement after the article"
+
+#: inc/comments.php:44
+msgid "Your comment is awaiting moderation."
+msgstr "Your comment is awaiting moderation."
+
+#: inc/comments.php:64
+msgid "Edit"
+msgstr "Edit"
+
+#: inc/nav.php:30, inc/setup.php:59
+msgid "Primary menu"
+msgstr "Primary menu"
+
+#: inc/nav.php:37
+msgid "Menu"
+msgstr "Menu"
+
+#: inc/template-helpers.php:102, inc/template-helpers.php:160
+msgid "Breadcrumb"
+msgstr "Breadcrumb"
+
+#: inc/template-helpers.php:221
+msgid "Newer posts"
+msgstr "Newer posts"
+
+#: inc/template-helpers.php:222
+msgid "Older posts"
+msgstr "Older posts"
+
+#: inc/template-helpers.php:230
+msgid "Posts pagination"
+msgstr "Posts pagination"
+
+#: inc/term-meta.php:42, inc/term-meta.php:63
+msgid "Custom H1 title"
+msgstr "Custom H1 title"
+
+#: inc/term-meta.php:44, inc/term-meta.php:71
+msgid "Optional title displayed as the main heading on this archive."
+msgstr "Optional title displayed as the main heading on this archive."
+
+#: inc/widgets.php:26
+msgid "Main sidebar"
+msgstr "Main sidebar"
+
+#: inc/widgets.php:28
+msgid "Widgets displayed beside the main content."
+msgstr "Widgets displayed beside the main content."
+
+#: inc/widgets.php:40
+#. translators: %d: footer column number.
+msgid "Footer column %d"
+msgstr "Footer column %d"
+
+#: inc/widgets.php:43
+#. translators: %d: footer column number.
+msgid "Widgets displayed in footer column %d."
+msgstr "Widgets displayed in footer column %d."
+
+#: parts/ad-slot.php:30
+msgid "Advertisement"
+msgstr "Advertisement"
+
+#: parts/card-article.php:65, parts/post-meta.php:54
+#. translators: %d: estimated reading time in minutes.
+#. translators: %d: estimated reading time in minutes.
+msgid "%d min read"
+msgstr "%d min read"
+
+#: parts/footer-site.php:59
+#. translators: 1: Current year, 2: Website domain.
+msgid "© %1$s %2$s. All rights reserved."
+msgstr "© %1$s %2$s. All rights reserved."
+
+#: parts/footer-site.php:69
+#. translators: %s: Website domain.
+msgid ""
+"%s is an independent information website. Our guides are provided for "
+"informational purposes and do not constitute financial, legal or "
+"administrative advice."
+msgstr ""
+"%s is an independent information website. Our guides are provided for "
+"informational purposes and do not constitute financial, legal or "
+"administrative advice."
+
+#: parts/footer-site.php:76
+msgid "Social links"
+msgstr "Social links"
+
+#: parts/post-meta.php:27
+msgid "Published on"
+msgstr "Published on"
+
+#: parts/post-meta.php:35
+msgid "by"
+msgstr "by"
+
+#: parts/post-meta.php:44
+msgid "in"
+msgstr "in"
+
+#: parts/related-posts.php:43
+msgid "Related articles"
+msgstr "Related articles"
+
+#: inc/widgets/category-posts.php:25
+msgid "NanoBoy: Category posts"
+msgstr "NanoBoy: Category posts"
+
+#: inc/widgets/category-posts.php:27
+msgid "Displays recent posts from a selected category."
+msgstr "Displays recent posts from a selected category."
+
+#: inc/widgets/category-posts.php:100
+msgid "Title (optional):"
+msgstr "Title (optional):"
+
+#: inc/widgets/category-posts.php:104
+msgid "Category:"
+msgstr "Category:"
+
+#: inc/widgets/category-posts.php:113
+msgid "Select a category"
+msgstr "Select a category"
+
+#: inc/widgets/category-posts.php:120, inc/widgets/recent-posts.php:97
+msgid "Number of posts:"
+msgstr "Number of posts:"
+
+#: inc/widgets/popular-posts.php:29
+msgid "NanoBoy: Popular posts"
+msgstr "NanoBoy: Popular posts"
+
+#: inc/widgets/popular-posts.php:31
+msgid "Displays a hand-picked selection of 3 to 6 posts."
+msgstr "Displays a hand-picked selection of 3 to 6 posts."
+
+#: inc/widgets/popular-posts.php:110, inc/widgets/recent-posts.php:93
+msgid "Title:"
+msgstr "Title:"
+
+#: inc/widgets/popular-posts.php:114
+msgid "Posts to display:"
+msgstr "Posts to display:"
+
+#: inc/widgets/popular-posts.php:118
+msgid ""
+"Enter 3 to 6 unique post IDs separated by commas, in the desired display "
+"order. Only the first 6 IDs are saved."
+msgstr ""
+"Enter 3 to 6 unique post IDs separated by commas, in the desired display "
+"order. Only the first 6 IDs are saved."
+
+#: inc/widgets/popular-posts.php:120
+msgid "You can find an ID in the post editor URL, for example post=123."
+msgstr "You can find an ID in the post editor URL, for example post=123."
+
+#: inc/widgets/popular-posts.php:124
+msgid "Selected posts:"
+msgstr "Selected posts:"
+
+#: inc/widgets/popular-posts.php:138
+#. translators: %d: post ID.
+msgid "#%d — post not found or not published."
+msgstr "#%d — post not found or not published."
+
+#: inc/widgets/popular-posts.php:154
+#. translators: 1: number of valid published posts, 2: maximum number of posts.
+msgid "%1$d published post ready to display (maximum: %2$d)."
+msgid_plural "%1$d published posts ready to display (maximum: %2$d)."
+msgstr[0] "%1$d published post ready to display (maximum: %2$d)."
+msgstr[1] "%1$d published posts ready to display (maximum: %2$d)."
+
+#: inc/widgets/popular-posts.php:174
+#. translators: %d: minimum number of posts.
+msgid ""
+"Add at least %d published posts: the widget stays hidden until this minimum "
+"is reached."
+msgstr ""
+"Add at least %d published posts: the widget stays hidden until this minimum "
+"is reached."
+
+#: inc/widgets/popular-posts.php:191
+msgid "Popular articles to discover"
+msgstr "Popular articles to discover"
+
+#: inc/widgets/recent-posts.php:25
+msgid "NanoBoy: Recent posts"
+msgstr "NanoBoy: Recent posts"
+
+#: inc/widgets/recent-posts.php:27
+msgid "Displays the most recently published posts."
+msgstr "Displays the most recently published posts."
+
+#: inc/widgets/recent-posts.php:88
+msgid "Recent posts"
+msgstr "Recent posts"
+
+#: inc/widgets/recent-posts.php:102
+msgid "Display post date"
+msgstr "Display post date"

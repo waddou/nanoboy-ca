@@ -1,0 +1,89 @@
+/**
+ * NanoBoy — Fil d'Ariane natif et plugins SEO.
+ *
+ * Couche : components.
+ */
+
+@layer components {
+	.breadcrumb {
+		display: none;
+		max-inline-size: 100%;
+		margin-block: 0 var(--nb-space-3);
+		overflow: hidden;
+		color: var(--nb-color-muted);
+		font-size: var(--nb-font-size-sm);
+		line-height: var(--nb-line-height-tight);
+	}
+
+	.breadcrumb__list,
+	.breadcrumb--yoast > span,
+	.breadcrumb--rank-math .rank-math-breadcrumb > p {
+		display: flex;
+		align-items: center;
+		gap: var(--nb-space-1);
+		min-inline-size: 0;
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
+		list-style: none;
+		white-space: nowrap;
+	}
+
+	.breadcrumb__item {
+		display: flex;
+		align-items: center;
+		gap: var(--nb-space-1);
+		min-inline-size: 0;
+		margin: 0;
+	}
+
+	.breadcrumb__item:last-child {
+		flex: 1 1 auto;
+	}
+
+	.breadcrumb__link {
+		color: inherit;
+	}
+
+	.breadcrumb__link--home {
+		display: grid;
+		flex: 0 0 auto;
+		place-items: center;
+	}
+
+	.breadcrumb__icon {
+		display: block;
+		flex: 0 0 auto;
+		inline-size: var(--nb-space-3);
+		block-size: var(--nb-space-3);
+		fill: currentcolor;
+	}
+
+	.breadcrumb__icon--home {
+		color: var(--nb-color-link);
+	}
+
+	.breadcrumb__icon--separator {
+		inline-size: var(--nb-space-2);
+		block-size: var(--nb-space-2);
+		color: var(--nb-color-muted-soft);
+	}
+
+	.breadcrumb :is(a, [aria-current="page"], .breadcrumb_last) {
+		display: block;
+		max-inline-size: calc(var(--nb-space-7) * 6);
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.breadcrumb a:has(.breadcrumb__icon--home) {
+		flex: 0 0 auto;
+	}
+
+	@media (min-width: 48rem) { /* --nb-bp-md */
+		.breadcrumb {
+			display: block;
+		}
+	}
+}

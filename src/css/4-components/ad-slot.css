@@ -1,0 +1,91 @@
+/**
+ * NanoBoy — Emplacements AdSense avec espace réservé anti-CLS.
+ *
+ * Principe : chaque variante fige les dimensions de son créneau AVANT la
+ * réponse AdSense — aucune hauteur ne dépend de la pub servie, donc zéro
+ * décalage de mise en page. Les unités dimensionnées en CSS (sidebar, haut
+ * d'article) suivent la méthode Google « modifier le code responsive » :
+ * l'<ins> n'a pas de data-ad-format, AdSense sert la taille calculée ici.
+ *
+ * Couche : components.
+ */
+
+@layer components {
+	/* Encart volontairement « nu » : ni cadre, ni libellé visible — seul
+	   l'aria-label du fragment PHP identifie la zone pour les lecteurs d'écran. */
+	.ad-slot {
+		display: grid;
+		place-items: center;
+		inline-size: 100%;
+		max-inline-size: 100%;
+		min-inline-size: 0;
+		min-block-size: var(--nb-ad-list-min-height);
+		margin-block: var(--nb-space-5);
+		overflow: hidden;
+	}
+
+	.ad-slot__unit {
+		display: block;
+		inline-size: 100%;
+		max-inline-size: 100%;
+		min-inline-size: 0;
+	}
+
+	/* — Listes (accueil, archives) : cartes pub aux positions 2 et 4 — */
+	/* Hauteur figée : 280px d'annonce (style inline de l'<ins>). Le rythme
+	   vertical vient du gap de .grid-cards, comme pour les cartes article. */
+	.ad-slot--list-top,
+	.ad-slot--list-in-feed {
+		margin-block: 0;
+		min-block-size: 0;
+		block-size: var(--nb-ad-height);
+	}
+
+	/* — Haut d'article (single) : pleine largeur du contenu, hauteur figée — */
+	/* Premier enfant de .entry__content : l'espacement sous la pub vient du
+	   flux du contenu (sélecteur « * + * » du template single). */
+	.ad-slot--article-top {
+		margin-block: 0;
+		min-block-size: 0;
+		block-size: var(--nb-ad-height);
+	}
+
+	.ad-slot--article-top .ad-slot__unit {
+		block-size: var(--nb-ad-height);
+	}
+
+	/* — Sidebar : premier widget, desktop uniquement — */
+	/* Masqué sous 64rem ; le push JS est désactivé au même seuil
+	   (parts/ad-slot.php) → zéro requête mobile. */
+	.ad-slot--sidebar-top {
+		display: none;
+		margin-block: 0;
+		min-block-size: 0;
+	}
+
+	/* --nb-bp-lg : la sidebar passe à côté du contenu (colonne ~289px). */
+	@media (min-width: 64rem) {
+		.ad-slot--sidebar-top {
+			display: grid;
+			block-size: var(--nb-ad-sidebar-sm);
+		}
+
+		.ad-slot--sidebar-top .ad-slot__unit {
+			inline-size: var(--nb-ad-sidebar-sm);
+			block-size: var(--nb-ad-sidebar-sm);
+		}
+	}
+
+	/* --nb-bp-xl : la colonne 4/12 atteint ~347px → grand rectangle. */
+	@media (min-width: 75rem) {
+		.ad-slot--sidebar-top {
+			block-size: var(--nb-ad-sidebar-height);
+		}
+
+		.ad-slot--sidebar-top .ad-slot__unit {
+			inline-size: var(--nb-ad-sidebar-width);
+			block-size: var(--nb-ad-sidebar-height);
+		}
+	}
+
+}

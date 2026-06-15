@@ -1,0 +1,72 @@
+/**
+ * NanoBoy — Pagination des listings.
+ *
+ * Couche : components.
+ */
+
+@layer components {
+	.pagination {
+		margin-block: var(--nb-space-5);
+	}
+
+	.pagination > .page-numbers {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--nb-space-2);
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	.pagination > .page-numbers li {
+		display: flex;
+		margin: 0;
+	}
+
+	.pagination a,
+	.pagination .current,
+	.pagination .dots {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-inline-size: 2.75rem;
+		min-block-size: 2.75rem;
+		padding: var(--nb-space-2);
+		background-color: var(--nb-color-surface);
+		border: var(--nb-border);
+		border-radius: var(--nb-radius);
+		box-shadow: var(--nb-shadow-sm);
+		font-size: var(--nb-font-size-sm);
+		font-weight: var(--nb-font-weight-medium);
+		line-height: 1;
+		text-decoration: none;
+		transition:
+			color var(--nb-transition),
+			background-color var(--nb-transition),
+			border-color var(--nb-transition),
+			box-shadow var(--nb-transition);
+	}
+
+	.pagination :is(.prev, .next) {
+		min-inline-size: auto;
+		padding-inline: var(--nb-space-4);
+	}
+
+	.pagination a:hover,
+	.pagination a:focus,
+	.pagination .current {
+		color: var(--nb-color-on-dark) !important;
+		background-color: var(--nb-color-link);
+		border-color: var(--nb-color-link);
+		box-shadow: var(--nb-shadow);
+	}
+
+	.pagination .current {
+		font-weight: var(--nb-font-weight-bold);
+	}
+
+	.pagination .dots {
+		color: var(--nb-color-muted);
+		box-shadow: none;
+	}
+}

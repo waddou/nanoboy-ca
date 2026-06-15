@@ -1,0 +1,128 @@
+/**
+ * NanoBoy — Pied de site.
+ *
+ * Deux zones : la zone widgets haute (3 colonnes figées — cf. inventaire §1.2)
+ * et la barre copyright. Mobile-first : colonnes empilées → 3 colonnes à
+ * partir de --nb-bp-md.
+ *
+ * Couche : layout.
+ */
+
+@layer layout {
+	.site-footer {
+		margin-block-start: var(--nb-space-7);
+		color: var(--nb-color-bg-subtle);
+		background-color: var(--nb-color-surface-dark);
+		background-image:
+			linear-gradient(var(--nb-color-grid-dark) var(--nb-border-width), transparent var(--nb-border-width)),
+			linear-gradient(90deg, var(--nb-color-grid-dark) var(--nb-border-width), transparent var(--nb-border-width));
+		background-size: var(--nb-bg-grid-size) var(--nb-bg-grid-size);
+		border-block-start: 4px solid var(--nb-color-accent);
+	}
+
+	/* — Zone widgets : 3 colonnes — */
+	.site-footer__widgets {
+		display: grid;
+		grid-template-columns: 1fr; /* Mobile : empilé. */
+		gap: var(--nb-space-5);
+		padding-block: var(--nb-space-6);
+	}
+
+	.site-footer__col {
+		min-inline-size: 0;
+	}
+
+	.site-footer__col > * + * {
+		margin-block-start: var(--nb-space-4);
+	}
+
+	.site-footer__title {
+		margin-block-start: 0;
+		font-size: var(--nb-font-size-lg);
+		/* Surclasse la couleur de heading non-layered injectée par theme.json. */
+		color: var(--nb-color-on-dark) !important;
+	}
+
+	.site-footer a {
+		/* Surclasse la couleur de lien non-layered injectée par theme.json. */
+		color: var(--nb-color-on-dark) !important;
+	}
+
+	.site-footer a:hover,
+	.site-footer a:focus {
+		color: var(--nb-color-accent-soft) !important;
+	}
+
+	.site-footer__col ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	.site-footer__col li + li {
+		margin-block-start: var(--nb-space-2);
+	}
+
+	@media (min-width: 48rem) { /* --nb-bp-md */
+		.site-footer__widgets {
+			grid-template-columns: 2fr 1fr 1fr; /* Colonne 1 : moitié de l'espace. */
+		}
+	}
+
+	/* — Barre copyright — */
+	.site-footer__bar {
+		border-block-start: var(--nb-border-width) solid var(--nb-color-surface-dark-soft);
+		padding-block: var(--nb-space-4);
+		font-size: var(--nb-font-size-sm);
+		color: var(--nb-color-bg-subtle);
+	}
+
+	.site-footer__bar-inner {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		gap: var(--nb-space-2);
+	}
+
+	.site-footer__disclaimer {
+		width: 100%;
+		font-size: var(--nb-font-size-xs);
+		opacity: 0.75;
+		margin: 0;
+	}
+
+	.site-footer__social-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--nb-space-3);
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.site-footer__social-list li {
+		margin: 0;
+	}
+
+	.site-footer__social-link {
+		display: grid;
+		place-items: center;
+		inline-size: 2.75rem;
+		block-size: 2.75rem;
+		color: var(--nb-color-on-dark);
+		border: var(--nb-border);
+		border-radius: 50%;
+		text-decoration: none;
+	}
+
+	.site-footer__social-link:hover {
+		color: var(--nb-color-accent-soft) !important;
+	}
+
+	.site-footer__social-icon {
+		inline-size: 1.25rem;
+		block-size: 1.25rem;
+		fill: currentcolor;
+	}
+}

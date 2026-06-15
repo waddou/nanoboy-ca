@@ -1,0 +1,120 @@
+/**
+ * NanoBoy — Design tokens (--nb-*).
+ *
+ * Miroir lisible de theme.json : c'est ICI que le thème puise ses valeurs
+ * (les composants n'utilisent QUE des --nb-*, jamais de valeur magique).
+ * Si une valeur change, la modifier dans theme.json ET ici pour rester en phase.
+ *
+ * Couche : settings (la plus basse → toujours surclassable).
+ */
+
+@layer settings {
+	:root {
+		/* — Couleurs : identité moderne noir + bleu — */
+		--nb-color-accent: #1e6091;
+		--nb-color-accent-hover: #164a70;
+		--nb-color-accent-soft: #e5f1f8;
+		--nb-color-link: #1e6091;
+		--nb-color-link-hover: #123f61;
+		--nb-color-text: #33414b;
+		--nb-color-text-strong: #101820;
+		--nb-color-bg: #f4f8fb;
+		--nb-color-bg-page: var(--nb-color-bg);
+		--nb-color-bg-subtle: #eaf2f7;
+		--nb-color-surface: #fff;
+		--nb-color-surface-glass: rgba(255, 255, 255, 0.92);
+		--nb-color-surface-dark: #0b1117;
+		--nb-color-surface-dark-soft: #23303a;
+		--nb-color-on-dark: #fff;
+		--nb-color-border: #cbdbe6;
+		--nb-color-muted: #52616d; /* ≥ 4.5:1 sur blanc ET sur bg-subtle (WCAG AA). */
+		--nb-color-muted-soft: #667784;
+		--nb-color-mark: #dbeafe;
+		--nb-color-grid: rgba(30, 96, 145, 0.09);
+		--nb-color-grid-dark: rgba(255, 255, 255, 0.035);
+
+		/* Cible de focus (accessibilité — visible sur fond clair). */
+		--nb-color-focus: var(--nb-color-link);
+
+		/* — Typographie : stacks système (zéro requête, zéro CLS) — */
+		--nb-font-system: system-ui, -apple-system, "Segoe UI", Roboto,
+			"Helvetica Neue", Arial, "Noto Sans", sans-serif,
+			"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+		--nb-font-serif: Charter, "Bitstream Charter", "Sitka Text", Cambria,
+			Georgia, "Times New Roman", serif;
+		--nb-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+			"Liberation Mono", monospace;
+
+		--nb-font-body: var(--nb-font-system);
+		--nb-font-heading: var(--nb-font-system);
+
+		/* Échelle de tailles (fluide via clamp pour les gros titres). */
+		--nb-font-size-xs: 0.75rem; /* 12px */
+		--nb-font-size-sm: 0.875rem; /* 14px */
+		--nb-font-size-base: 1rem; /* 16px */
+		--nb-font-size-lg: clamp(1.0625rem, 1rem + 0.3vw, 1.125rem);
+		--nb-font-size-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.375rem);
+		--nb-font-size-2xl: clamp(1.5rem, 1.3rem + 1vw, 1.75rem);
+		--nb-font-size-3xl: clamp(2rem, 1.55rem + 2vw, 2.75rem);
+		--nb-font-size-4xl: clamp(2.35rem, 1.6rem + 3vw, 3.75rem);
+
+		/* Hauteurs de ligne. */
+		--nb-line-height-tight: 1.12; /* Titres. */
+		--nb-line-height-base: 1.6; /* Corps de texte (lisibilité). */
+
+		/* Graisses. */
+		--nb-font-weight-normal: 400;
+		--nb-font-weight-medium: 600;
+		--nb-font-weight-bold: 700;
+
+		/* — Espacements (échelle modulaire, miroir de theme.json) — */
+		--nb-space-1: 0.25rem; /* 4px */
+		--nb-space-2: 0.5rem; /* 8px */
+		--nb-space-3: 1rem; /* 16px */
+		--nb-space-4: 1.5rem; /* 24px */
+		--nb-space-5: 2rem; /* 32px */
+		--nb-space-6: 3rem; /* 48px */
+		--nb-space-7: 4rem; /* 64px */
+
+		/* — Mise en page (boxed centré, grille 8/12 + 4/12) — */
+		--nb-container-max: 1200px; /* Cf. config.php layout.container_max. */
+		--nb-container-pad: clamp(var(--nb-space-3), 3vw, var(--nb-space-5));
+		--nb-grid-gap: var(--nb-space-6);
+		--nb-grid-columns: 12; /* Trame de référence. */
+		--nb-grid-main: 8; /* Colonnes du contenu principal. */
+		--nb-grid-aside: 4; /* Colonnes de la sidebar. */
+		--nb-bg-grid-size: 32px;
+
+		/* — Dimensions réservées anti-CLS — */
+		--nb-card-image-ratio: 16 / 9; /* Hero / carte mise en avant. */
+		--nb-card-thumb-ratio: 3 / 2; /* Miniature de listing (300×200 max). */
+		--nb-card-thumb-max: 300px; /* Largeur maximale de la miniature. */
+		--nb-related-image-ratio: 3 / 2;
+		--nb-ad-list-min-height: 280px;
+		--nb-ad-height: 280px; /* Hauteur figée des créneaux in-content (listes, haut d'article). */
+		--nb-ad-sidebar-sm: 250px; /* Carré 250×250 — sidebar de 1024 à 1199px (colonne ~289px). */
+		--nb-ad-sidebar-width: 336px; /* Grand rectangle 336×280 — sidebar ≥ 1200px (colonne ~347px). */
+		--nb-ad-sidebar-height: 280px;
+
+		/* — Bordures & rayons — */
+		--nb-border-width: 1px;
+		--nb-border: var(--nb-border-width) solid var(--nb-color-border);
+		--nb-radius-sm: 6px;
+		--nb-radius: 10px;
+		--nb-radius-lg: 18px;
+		--nb-radius-pill: 999px;
+
+		/* — Ombres (discrètes) — */
+		--nb-shadow-sm: 0 4px 18px rgba(16, 24, 32, 0.06);
+		--nb-shadow: 0 16px 44px rgba(30, 96, 145, 0.11);
+		--nb-shadow-hover: 0 20px 54px rgba(30, 96, 145, 0.18);
+		--nb-blur-surface: 18px;
+
+		/* — Transitions — */
+		--nb-transition: 0.2s ease;
+
+		/* — Profondeurs (z-index) — */
+		--nb-z-header: 100;
+		--nb-z-overlay: 300;
+	}
+}

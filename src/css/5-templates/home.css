@@ -1,0 +1,45 @@
+/**
+ * NanoBoy — Accueil.
+ *
+ * Couche : templates.
+ */
+
+@layer templates {
+	.home-listing__hero {
+		margin-block-end: var(--nb-space-5);
+	}
+
+	/* Titre de section en « eyebrow » : label discret, le contenu domine. */
+	.home-listing__section-title {
+		display: flex;
+		align-items: center;
+		gap: var(--nb-space-2);
+		margin-block: 0 var(--nb-space-3);
+		font-family: var(--nb-font-body);
+		font-size: var(--nb-font-size-sm);
+		font-weight: var(--nb-font-weight-bold);
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--nb-color-muted);
+	}
+
+	.home-listing__section-title::before {
+		flex: 0 0 auto;
+		inline-size: var(--nb-space-3);
+		block-size: 3px;
+		content: "";
+		background-color: var(--nb-color-accent);
+		border-radius: var(--nb-radius-pill);
+	}
+
+	.home-listing__section-title::after {
+		flex: 1 1 auto;
+		block-size: var(--nb-border-width);
+		content: "";
+		background-color: var(--nb-color-border);
+	}
+
+	.home-listing__hero .card--featured {
+		border-block-start: 4px solid var(--nb-color-accent);
+	}
+}

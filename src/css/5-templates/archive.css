@@ -1,0 +1,76 @@
+/**
+ * NanoBoy — En-têtes et états des listings.
+ *
+ * Couche : templates.
+ */
+
+@layer templates {
+	/* En-tête ouvert (sans boîte) : titre + trait accent, signature du thème. */
+	.listing-header {
+		margin-block-end: var(--nb-space-5);
+		padding-block-end: var(--nb-space-4);
+		border-block-end: var(--nb-border);
+	}
+
+	.listing-header__title {
+		margin-block-start: 0;
+		margin-block-end: var(--nb-space-2);
+	}
+
+	.listing-header__title::after {
+		display: block;
+		inline-size: var(--nb-space-6);
+		block-size: 4px;
+		margin-block-start: var(--nb-space-2);
+		content: "";
+		background-color: var(--nb-color-accent);
+		border-radius: var(--nb-radius-pill);
+	}
+
+	.listing-header__description {
+		display: -webkit-box;
+		overflow: hidden;
+		color: var(--nb-color-muted);
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+	}
+
+	.listing-header__description > :last-child {
+		margin-block-end: 0;
+	}
+
+	.listing-empty {
+		padding: var(--nb-space-4);
+		background-color: var(--nb-color-bg-subtle);
+		border: var(--nb-border);
+		border-radius: var(--nb-radius);
+	}
+
+	.search-form {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--nb-space-2);
+	}
+
+	.search-form__label {
+		flex: 1 1 auto;
+		min-inline-size: 0;
+	}
+
+	.search-form__field {
+		inline-size: 100%;
+		min-block-size: calc(var(--nb-space-6) - var(--nb-space-1));
+	}
+
+	.search-form__submit {
+		flex: 0 0 auto;
+	}
+
+	@media (min-width: 48rem) { /* --nb-bp-md */
+		.listing-header__description {
+			display: block;
+			overflow: visible;
+			-webkit-line-clamp: unset;
+		}
+	}
+}

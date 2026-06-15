@@ -1,0 +1,85 @@
+/**
+ * NanoBoy — Typographie de base.
+ *
+ * Pose la stack système sur <html>, le rythme vertical du corps et l'échelle
+ * des titres (tokens --nb-font-*). Mobile-first ; les tailles fluides montent
+ * d'elles-mêmes via clamp(). Aucune police externe (zéro requête, zéro CLS).
+ *
+ * Couche : base.
+ */
+
+@layer base {
+	html {
+		font-family: var(--nb-font-body);
+		font-size: 100%; /* Respecte la taille de base du navigateur (a11y). */
+		line-height: var(--nb-line-height-base);
+	}
+
+	body {
+		font-size: var(--nb-font-size-base);
+		color: var(--nb-color-text);
+		background-color: var(--nb-color-bg-page);
+		background-image:
+			linear-gradient(var(--nb-color-grid) var(--nb-border-width), transparent var(--nb-border-width)),
+			linear-gradient(90deg, var(--nb-color-grid) var(--nb-border-width), transparent var(--nb-border-width));
+		background-size: var(--nb-bg-grid-size) var(--nb-bg-grid-size);
+	}
+
+	/* — Titres — */
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: var(--nb-font-heading);
+		color: var(--nb-color-text-strong);
+		font-weight: var(--nb-font-weight-bold);
+		line-height: var(--nb-line-height-tight);
+		letter-spacing: -0.035em;
+		text-wrap: balance; /* Évite les veuves sur les titres. */
+	}
+
+	h1 {
+		font-size: var(--nb-font-size-3xl);
+	}
+
+	h2 {
+		font-size: var(--nb-font-size-2xl);
+	}
+
+	h3 {
+		font-size: var(--nb-font-size-xl);
+	}
+
+	h4 {
+		font-size: var(--nb-font-size-lg);
+	}
+
+	h5,
+	h6 {
+		font-size: var(--nb-font-size-base);
+	}
+
+	/* — Corps de texte — */
+	p {
+		text-wrap: pretty; /* Limite les lignes orphelines en fin de paragraphe. */
+	}
+
+	small {
+		font-size: var(--nb-font-size-sm);
+	}
+
+	strong,
+	b {
+		font-weight: var(--nb-font-weight-bold);
+	}
+
+	code,
+	kbd,
+	samp,
+	pre {
+		font-family: var(--nb-font-mono);
+		font-size: 0.9375em;
+	}
+}

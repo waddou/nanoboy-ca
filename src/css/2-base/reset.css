@@ -1,0 +1,128 @@
+/**
+ * NanoBoy — Reset moderne.
+ *
+ * Minimal, sans normalize.css : gomme les marges par défaut, fiabilise le
+ * box-model, rend les médias responsives (anti-CLS) et respecte les
+ * préférences de mouvement réduit. Mobile-first, propriétés logiques.
+ *
+ * Couche : base.
+ */
+
+@layer base {
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	/* Réinitialise les marges des éléments de flux courants. */
+	body,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	figure,
+	blockquote,
+	dl,
+	dd,
+	ul,
+	ol {
+		margin: 0;
+	}
+
+	html {
+		-webkit-text-size-adjust: 100%; /* Empêche le zoom auto du texte sous iOS. */
+		text-size-adjust: 100%;
+		-moz-tab-size: 4;
+		tab-size: 4;
+	}
+
+	body {
+		min-block-size: 100vh;
+		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
+	}
+
+	/* Garde-fou anti-débordement horizontal.
+	   Une annonce AdSense injectée HORS des conteneurs du thème (typiquement
+	   les « Auto ads », réglées côté compte) n'hérite pas du overflow:hidden
+	   des .ad-slot et peut poser un élément plus large que le viewport → barre
+	   de défilement et contenu rogné sur mobile. `clip` rogne ce débordement
+	   sans créer de conteneur de défilement, donc sans neutraliser un éventuel
+	   position: sticky (ce que ferait `hidden`). */
+	html,
+	body {
+		max-inline-size: 100%;
+		overflow-x: clip;
+	}
+
+	/* Médias : responsives et alignés sur la ligne de base (anti-CLS). */
+	img,
+	picture,
+	video,
+	canvas,
+	svg {
+		display: block;
+		max-inline-size: 100%;
+		block-size: auto;
+	}
+
+	/* Conserve le ratio quand width/height sont posés dans le HTML. */
+	img,
+	video {
+		height: auto;
+	}
+
+	/* Formulaires : héritent de la typographie ambiante. */
+	input,
+	button,
+	textarea,
+	select {
+		font: inherit;
+		color: inherit;
+	}
+
+	/* Évite les débordements de mots très longs. */
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	li,
+	dd {
+		overflow-wrap: break-word;
+	}
+
+	/* Cible d'ancrage : décalée pour ne pas passer sous un header collant. */
+	:target {
+		scroll-margin-block-start: var(--nb-space-6, 3rem);
+	}
+
+	/* Listes sans rôle sémantique (réglées au cas par cas dans les composants). */
+	ul[role="list"],
+	ol[role="list"] {
+		list-style: none;
+		padding: 0;
+	}
+
+	/* Respecte « réduire les animations ». */
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+			scroll-behavior: auto !important;
+		}
+	}
+}

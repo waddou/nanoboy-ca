@@ -1,0 +1,48 @@
+/**
+ * NanoBoy — Point d'entrée CSS (bundle unique).
+ *
+ * esbuild inline les @import ci-dessous puis minifie le tout vers
+ * assets/css/app.min.css (le seul CSS servi en prod).
+ *
+ * Ordre des couches déclaré une fois ici → cascade maîtrisée, zéro guerre
+ * de spécificité. Tout style appartient à l'une de ces couches :
+ *   settings   → custom properties (miroir de theme.json)
+ *   base       → reset, typographie, éléments HTML nus
+ *   layout     → conteneur boxed, grille, header, footer, sidebar
+ *   components → briques réutilisables (cartes, boutons, pubs…)
+ *   templates  → spécificités par écran (accueil, single, archive, 404)
+ *
+ * @import sans @layer hérite de la couche déclarée dans chaque partial.
+ */
+
+@layer settings, base, layout, components, templates;
+
+/* 1 — Settings : tokens (miroir theme.json) + points de rupture. */
+@import "./1-settings/tokens.css";
+@import "./1-settings/breakpoints.css";
+
+/* 2 — Base : reset moderne, typographie, éléments HTML. */
+@import "./2-base/reset.css";
+@import "./2-base/typography.css";
+@import "./2-base/elements.css";
+
+/* 3 — Layout : structure de page (mobile-first). */
+@import "./3-layout/container.css";
+@import "./3-layout/grid.css";
+@import "./3-layout/header.css";
+@import "./3-layout/footer.css";
+@import "./3-layout/sidebar.css";
+
+/* 4 — Components : briques réutilisables. */
+@import "./4-components/button.css";
+@import "./4-components/card.css";
+@import "./4-components/pagination.css";
+@import "./4-components/breadcrumb.css";
+@import "./4-components/ad-slot.css";
+@import "./4-components/comments.css";
+
+/* 5 — Templates : spécificités par écran. */
+@import "./5-templates/home.css";
+@import "./5-templates/archive.css";
+@import "./5-templates/single.css";
+@import "./5-templates/404.css";

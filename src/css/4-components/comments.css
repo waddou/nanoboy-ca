@@ -1,0 +1,117 @@
+/**
+ * NanoBoy — Liste et formulaire de commentaires.
+ *
+ * Couche : components.
+ */
+
+@layer components {
+	.comments-area {
+		margin-block-start: var(--nb-space-6);
+		padding-block-start: var(--nb-space-5);
+		border-block-start: var(--nb-border);
+	}
+
+	.comments-area__title,
+	.comment-reply-title {
+		margin-block-start: 0;
+	}
+
+	.comment-list,
+	.comment-list .children {
+		padding: 0;
+		list-style: none;
+	}
+
+	.comment-list .children {
+		margin-block-start: var(--nb-space-3);
+		margin-inline-start: var(--nb-space-4);
+	}
+
+	.comment-item + .comment-item {
+		margin-block-start: var(--nb-space-4);
+	}
+
+	.comment-item__body {
+		padding: var(--nb-space-4);
+		background-color: var(--nb-color-surface);
+		border: var(--nb-border);
+		border-radius: var(--nb-radius);
+	}
+
+	.comment-item__header {
+		display: flex;
+		align-items: center;
+		gap: var(--nb-space-3);
+		margin-block-end: var(--nb-space-3);
+	}
+
+	.comment-item__avatar img {
+		display: block;
+		border-radius: 50%;
+	}
+
+	.comment-item__author {
+		margin: 0;
+		font-weight: var(--nb-font-weight-bold);
+	}
+
+	.comment-item__permalink {
+		color: var(--nb-color-muted);
+		font-size: var(--nb-font-size-sm);
+	}
+
+	.comment-item__moderation {
+		padding: var(--nb-space-2) var(--nb-space-3);
+		background-color: var(--nb-color-bg-subtle);
+		border-inline-start: 4px solid var(--nb-color-accent);
+	}
+
+	.comment-item__content > :last-child {
+		margin-block-end: 0;
+	}
+
+	.comment-item__actions {
+		display: flex;
+		gap: var(--nb-space-3);
+		margin-block-start: var(--nb-space-3);
+		font-size: var(--nb-font-size-sm);
+	}
+
+	.comment-form {
+		display: grid;
+		gap: var(--nb-space-3);
+	}
+
+	.comment-form > p {
+		margin: 0;
+	}
+
+	.comment-form label {
+		display: block;
+		margin-block-end: var(--nb-space-1);
+		font-weight: var(--nb-font-weight-medium);
+	}
+
+	.comment-form input:not([type="checkbox"]),
+	.comment-form textarea {
+		inline-size: 100%;
+	}
+
+	.comment-form-cookies-consent {
+		display: flex;
+		align-items: flex-start;
+		gap: var(--nb-space-2);
+	}
+
+	.comment-form-cookies-consent label {
+		margin: 0;
+		font-weight: var(--nb-font-weight-normal);
+	}
+
+	.comments-area__closed,
+	.no-comments {
+		padding: var(--nb-space-3);
+		background-color: var(--nb-color-bg-subtle);
+		border: var(--nb-border);
+	}
+}

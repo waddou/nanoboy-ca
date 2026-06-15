@@ -1,0 +1,311 @@
+# Copyright (C) 2026 NanoBoy
+# This file is distributed under the same license as the NanoBoy package.
+msgid ""
+msgstr ""
+"Project-Id-Version: NanoBoy\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: 404.php:22, inc/template-helpers.php:197
+msgid "Page not found"
+msgstr ""
+
+#: 404.php:24
+msgid "The page you are looking for may have been moved, deleted, or never existed. Try a search to continue."
+msgstr ""
+
+#: archive.php:58
+msgid "No articles were found in this archive."
+msgstr ""
+
+#. translators: %s: number of comments.
+#: comments.php:24
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:47
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:56
+msgid "Your email address will not be published."
+msgstr ""
+
+#: front-page.php:51
+msgid "Featured article"
+msgstr ""
+
+#: front-page.php:59, index.php:17
+msgid "Latest articles"
+msgstr ""
+
+#: front-page.php:87
+msgid "No articles have been published yet."
+msgstr ""
+
+#: header.php:28
+msgid "Skip to content"
+msgstr ""
+
+#: index.php:53
+msgid "No articles were found."
+msgstr ""
+
+#: page.php:36
+msgid "Page sections"
+msgstr ""
+
+#. translators: %s: search query.
+#. translators: %s: search query.
+#: search.php:24, inc/template-helpers.php:191
+msgid "Search results for: %s"
+msgstr ""
+
+#: search.php:44
+msgid "No results matched your search. Try different keywords."
+msgstr ""
+
+#: searchform.php:18
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:25
+msgid "Search…"
+msgstr ""
+
+#: searchform.php:27, sidebar.php:27
+msgid "Search"
+msgstr ""
+
+#: sidebar.php:17
+msgid "Sidebar"
+msgstr ""
+
+#: sidebar.php:32
+msgid "Monthly archives"
+msgstr ""
+
+#: single.php:40
+msgid "Article pages"
+msgstr ""
+
+#: single.php:52
+msgid "Tags:"
+msgstr ""
+
+#: inc/ads.php:43
+msgid "Advertisement at the top of the sidebar"
+msgstr ""
+
+#: inc/ads.php:52
+msgid "Advertisement in the posts list"
+msgstr ""
+
+#: inc/ads.php:61
+msgid "Second advertisement in the posts list"
+msgstr ""
+
+#: inc/ads.php:70
+msgid "Advertisement before the article content"
+msgstr ""
+
+#: inc/ads.php:79
+msgid "Advertisement after the article"
+msgstr ""
+
+#: inc/comments.php:44
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/comments.php:64
+msgid "Edit"
+msgstr ""
+
+#: inc/nav.php:30, inc/setup.php:59
+msgid "Primary menu"
+msgstr ""
+
+#: inc/nav.php:37
+msgid "Menu"
+msgstr ""
+
+#: inc/template-helpers.php:102, inc/template-helpers.php:160
+msgid "Breadcrumb"
+msgstr ""
+
+#: inc/template-helpers.php:221
+msgid "Newer posts"
+msgstr ""
+
+#: inc/template-helpers.php:222
+msgid "Older posts"
+msgstr ""
+
+#: inc/template-helpers.php:230
+msgid "Posts pagination"
+msgstr ""
+
+#: inc/term-meta.php:42, inc/term-meta.php:63
+msgid "Custom H1 title"
+msgstr ""
+
+#: inc/term-meta.php:44, inc/term-meta.php:71
+msgid "Optional title displayed as the main heading on this archive."
+msgstr ""
+
+#: inc/widgets.php:26
+msgid "Main sidebar"
+msgstr ""
+
+#: inc/widgets.php:28
+msgid "Widgets displayed beside the main content."
+msgstr ""
+
+#. translators: %d: footer column number.
+#: inc/widgets.php:40
+msgid "Footer column %d"
+msgstr ""
+
+#. translators: %d: footer column number.
+#: inc/widgets.php:43
+msgid "Widgets displayed in footer column %d."
+msgstr ""
+
+#: parts/ad-slot.php:30
+msgid "Advertisement"
+msgstr ""
+
+#. translators: %d: estimated reading time in minutes.
+#. translators: %d: estimated reading time in minutes.
+#: parts/card-article.php:65, parts/post-meta.php:54
+msgid "%d min read"
+msgstr ""
+
+#. translators: 1: Current year, 2: Website domain.
+#: parts/footer-site.php:59
+msgid "© %1$s %2$s. All rights reserved."
+msgstr ""
+
+#. translators: %s: Website domain.
+#: parts/footer-site.php:69
+msgid "%s is an independent information website. Our guides are provided for informational purposes and do not constitute financial, legal or administrative advice."
+msgstr ""
+
+#: parts/footer-site.php:76
+msgid "Social links"
+msgstr ""
+
+#: parts/post-meta.php:27
+msgid "Published on"
+msgstr ""
+
+#: parts/post-meta.php:35
+msgid "by"
+msgstr ""
+
+#: parts/post-meta.php:44
+msgid "in"
+msgstr ""
+
+#: parts/related-posts.php:43
+msgid "Related articles"
+msgstr ""
+
+#: inc/widgets/category-posts.php:25
+msgid "NanoBoy: Category posts"
+msgstr ""
+
+#: inc/widgets/category-posts.php:27
+msgid "Displays recent posts from a selected category."
+msgstr ""
+
+#: inc/widgets/category-posts.php:100
+msgid "Title (optional):"
+msgstr ""
+
+#: inc/widgets/category-posts.php:104
+msgid "Category:"
+msgstr ""
+
+#: inc/widgets/category-posts.php:113
+msgid "Select a category"
+msgstr ""
+
+#: inc/widgets/category-posts.php:120, inc/widgets/recent-posts.php:97
+msgid "Number of posts:"
+msgstr ""
+
+#: inc/widgets/popular-posts.php:29
+msgid "NanoBoy: Popular posts"
+msgstr ""
+
+#: inc/widgets/popular-posts.php:31
+msgid "Displays a hand-picked selection of 3 to 6 posts."
+msgstr ""
+
+#: inc/widgets/popular-posts.php:110, inc/widgets/recent-posts.php:93
+msgid "Title:"
+msgstr ""
+
+#: inc/widgets/popular-posts.php:114
+msgid "Posts to display:"
+msgstr ""
+
+#: inc/widgets/popular-posts.php:118
+msgid "Enter 3 to 6 unique post IDs separated by commas, in the desired display order. Only the first 6 IDs are saved."
+msgstr ""
+
+#: inc/widgets/popular-posts.php:120
+msgid "You can find an ID in the post editor URL, for example post=123."
+msgstr ""
+
+#: inc/widgets/popular-posts.php:124
+msgid "Selected posts:"
+msgstr ""
+
+#. translators: %d: post ID.
+#: inc/widgets/popular-posts.php:138
+msgid "#%d — post not found or not published."
+msgstr ""
+
+#. translators: 1: number of valid published posts, 2: maximum number of posts.
+#: inc/widgets/popular-posts.php:154
+msgid "%1$d published post ready to display (maximum: %2$d)."
+msgid_plural "%1$d published posts ready to display (maximum: %2$d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: minimum number of posts.
+#: inc/widgets/popular-posts.php:174
+msgid "Add at least %d published posts: the widget stays hidden until this minimum is reached."
+msgstr ""
+
+#: inc/widgets/popular-posts.php:191
+msgid "Popular articles to discover"
+msgstr ""
+
+#: inc/widgets/recent-posts.php:25
+msgid "NanoBoy: Recent posts"
+msgstr ""
+
+#: inc/widgets/recent-posts.php:27
+msgid "Displays the most recently published posts."
+msgstr ""
+
+#: inc/widgets/recent-posts.php:88
+msgid "Recent posts"
+msgstr ""
+
+#: inc/widgets/recent-posts.php:102
+msgid "Display post date"
+msgstr ""
+

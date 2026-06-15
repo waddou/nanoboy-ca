@@ -1,0 +1,62 @@
+/**
+ * NanoBoy — Grille contenu / sidebar (8/12 + 4/12).
+ *
+ * Mobile-first : une seule colonne empilée (contenu puis sidebar dessous).
+ * À partir de --nb-bp-lg (64rem = 1024px), passage à deux colonnes 8/4 sur
+ * une trame de 12. Le modificateur --full occupe toute la largeur (templates
+ * sans sidebar).
+ *
+ * Structure attendue :
+ *   <div class="container">
+ *     <div class="layout">
+ *       <main class="layout__main">…</main>
+ *       <aside class="sidebar layout__aside">…</aside>
+ *     </div>
+ *   </div>
+ *
+ * Couche : layout.
+ */
+
+@layer layout {
+	.layout {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr); /* Mobile : empilé, sans débordement min-content. */
+		gap: var(--nb-grid-gap);
+		/* Haut resserré (zone de flottaison), bas généreux avant le footer. */
+		margin-block: var(--nb-space-5) var(--nb-space-7);
+	}
+
+	.layout__main,
+	.layout__aside {
+		/* Les iframes publicitaires peuvent déclarer une largeur supérieure à
+		   la colonne : la grille doit pouvoir les contenir sans élargir la page. */
+		min-inline-size: 0;
+	}
+
+	/* Desktop : trame 12 colonnes → main 8/12, aside 4/12. */
+	@media (min-width: 64rem) { /* --nb-bp-lg */
+		.layout {
+			grid-template-columns: repeat(var(--nb-grid-columns), 1fr);
+		}
+
+		.layout__main {
+			grid-column: span var(--nb-grid-main); /* 8/12 */
+		}
+
+		.layout__aside {
+			grid-column: span var(--nb-grid-aside); /* 4/12 */
+		}
+
+		/* Sans sidebar : le contenu occupe les 12 colonnes. */
+		.layout--full .layout__main {
+			grid-column: 1 / -1;
+		}
+	}
+
+	/* — Grille générique de cartes (listings) — */
+	.grid-cards {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: var(--nb-space-4); /* Aligné sur le padding interne des cartes. */
+	}
+}

@@ -1,0 +1,41 @@
+/**
+ * NanoBoy — Page 404.
+ *
+ * Couche : templates.
+ */
+
+@layer templates {
+	.error-404 {
+		display: grid;
+		place-items: center;
+		min-block-size: 50vh;
+		padding-block: var(--nb-space-7);
+		text-align: center;
+	}
+
+	.error-404__content {
+		inline-size: min(100%, 40rem);
+	}
+
+	.error-404__code {
+		margin: 0;
+		color: var(--nb-color-accent);
+		font-size: clamp(5rem, 20vw, 10rem);
+		font-weight: var(--nb-font-weight-bold);
+		line-height: 0.9;
+	}
+
+	.error-404__title {
+		margin-block: var(--nb-space-4) var(--nb-space-3);
+	}
+
+	.error-404__message {
+		margin-block-end: var(--nb-space-5);
+		color: var(--nb-color-muted);
+	}
+
+	.error-404 .search-form {
+		justify-content: center;
+		text-align: start;
+	}
+}

@@ -1,0 +1,20 @@
+# Dependencies
+/node_modules/
+
+# OS / éditeur
+.DS_Store
+Thumbs.db
+*.log
+
+# Build : les bundles d'assets ne sont PAS commités — buildés au déploiement (CI).
+# cf. .ai/docs/refactoring/02-arborescence-cible.md §10 (décision tranchée)
+/assets/css/app.min.css
+/assets/js/app.min.js
+/assets/css/app.min.css.map
+/assets/js/app.min.js.map
+
+# Paquet de production généré localement
+/dist/
+
+# i18n : les .po/.pot sont versionnés comme sources de traduction (seuls les .mo
+# sont nécessaires au runtime, mais on les conserve pour le déploiement sans build).

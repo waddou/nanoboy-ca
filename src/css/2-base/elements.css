@@ -1,0 +1,204 @@
+/**
+ * NanoBoy — Éléments HTML nus.
+ *
+ * Styles par défaut des balises génériques (liens, listes, médias, citations,
+ * code, tableaux, formulaires, focus). Tout ce qui n'est PAS un composant
+ * nommé vit ici. Accessibilité : focus visible, cibles de saut, <mark>.
+ *
+ * Couche : base.
+ */
+
+@layer base {
+	/* — Liens — */
+	a {
+		color: var(--nb-color-link);
+		text-decoration: underline;
+		text-decoration-thickness: from-font;
+		text-underline-offset: 0.15em;
+		transition: color var(--nb-transition);
+	}
+
+	a:hover,
+	a:focus {
+		color: var(--nb-color-link-hover);
+	}
+
+	/* — Focus visible (clavier) : non négociable a11y — */
+	:focus-visible {
+		outline: 2px solid var(--nb-color-focus);
+		outline-offset: 2px;
+	}
+
+	/* Neutralise l'outline par défaut là où :focus-visible prend le relais. */
+	:focus:not(:focus-visible) {
+		outline: none;
+	}
+
+	/* — Listes de contenu — */
+	ul,
+	ol {
+		padding-inline-start: var(--nb-space-4);
+	}
+
+	li + li {
+		margin-block-start: var(--nb-space-1);
+	}
+
+	/* — Surlignage de recherche / <mark> — */
+	mark {
+		background-color: var(--nb-color-mark);
+		color: var(--nb-color-text-strong);
+		padding-inline: 0.15em;
+	}
+
+	/* — Citations — */
+	blockquote {
+		margin-inline: 0;
+		padding-inline-start: var(--nb-space-4);
+		border-inline-start: 4px solid var(--nb-color-border);
+		color: var(--nb-color-muted);
+		font-style: italic;
+	}
+
+	/* — Séparateur — */
+	hr {
+		border: 0;
+		block-size: var(--nb-border-width);
+		background-color: var(--nb-color-border);
+		margin-block: var(--nb-space-5);
+	}
+
+	/* — Code — */
+	code {
+		background-color: var(--nb-color-bg-subtle);
+		padding: 0.1em 0.35em;
+		border-radius: var(--nb-radius-sm);
+	}
+
+	pre {
+		background-color: var(--nb-color-bg-subtle);
+		padding: var(--nb-space-3);
+		border-radius: var(--nb-radius);
+		overflow-x: auto;
+	}
+
+	pre code {
+		background: none;
+		padding: 0;
+	}
+
+	/* — Images légendées — */
+	figure {
+		margin-inline: 0;
+	}
+
+	figcaption {
+		margin-block-start: var(--nb-space-2);
+		font-size: var(--nb-font-size-sm);
+		color: var(--nb-color-muted);
+	}
+
+	/* — Tableaux — */
+	table {
+		inline-size: 100%;
+		border-collapse: collapse;
+		margin-block: var(--nb-space-4);
+	}
+
+	th,
+	td {
+		padding: var(--nb-space-2) var(--nb-space-3);
+		border: var(--nb-border);
+		text-align: start;
+	}
+
+	th {
+		background-color: var(--nb-color-bg-subtle);
+		font-weight: var(--nb-font-weight-medium);
+	}
+
+	/* — Formulaires — */
+	input,
+	textarea,
+	select {
+		max-inline-size: 100%;
+		padding: var(--nb-space-2) var(--nb-space-3);
+		color: var(--nb-color-text);
+		background-color: var(--nb-color-surface);
+		border: var(--nb-border);
+		border-radius: var(--nb-radius);
+		box-shadow: inset 0 1px 0 rgba(23, 47, 60, 0.03);
+		transition:
+			border-color var(--nb-transition),
+			box-shadow var(--nb-transition);
+	}
+
+	textarea {
+		resize: vertical;
+	}
+
+	input:focus,
+	textarea:focus,
+	select:focus {
+		border-color: var(--nb-color-link);
+		box-shadow: 0 0 0 3px var(--nb-color-bg-subtle);
+	}
+
+	button,
+	[type="button"],
+	[type="submit"],
+	[type="reset"],
+	label[for],
+	summary {
+		cursor: pointer;
+	}
+
+	::placeholder {
+		color: var(--nb-color-muted-soft);
+		opacity: 1;
+	}
+
+	/* — Lien d'évitement (skip link) : caché jusqu'au focus clavier — */
+	.skip-link {
+		position: absolute;
+		inset-inline-start: var(--nb-space-3);
+		inset-block-start: var(--nb-space-3);
+		z-index: var(--nb-z-overlay);
+		padding: var(--nb-space-2) var(--nb-space-3);
+		background-color: var(--nb-color-surface);
+		border: var(--nb-border);
+		border-radius: var(--nb-radius);
+		transform: translateY(-200%);
+		transition: transform var(--nb-transition);
+	}
+
+	.skip-link:focus {
+		transform: translateY(0);
+	}
+
+	/* — Utilitaire a11y : visible uniquement pour les lecteurs d'écran — */
+	.screen-reader-text {
+		position: absolute;
+		inline-size: 1px;
+		block-size: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip-path: inset(50%);
+		white-space: nowrap;
+		border: 0;
+	}
+
+	.screen-reader-text:focus {
+		position: fixed;
+		inset-block-start: var(--nb-space-3);
+		inset-inline-start: var(--nb-space-3);
+		inline-size: auto;
+		block-size: auto;
+		padding: var(--nb-space-2) var(--nb-space-3);
+		clip-path: none;
+		background-color: var(--nb-color-surface);
+		border: var(--nb-border);
+		z-index: var(--nb-z-overlay);
+	}
+}

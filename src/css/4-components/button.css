@@ -1,0 +1,35 @@
+/**
+ * NanoBoy — Boutons et liens d'action.
+ *
+ * Couche : components.
+ */
+
+@layer components {
+	.button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-block-size: calc(var(--nb-space-6) - var(--nb-space-1));
+		padding: var(--nb-space-2) var(--nb-space-4);
+		color: var(--nb-color-on-dark);
+		font-size: var(--nb-font-size-sm);
+		font-weight: var(--nb-font-weight-bold);
+		line-height: var(--nb-line-height-tight);
+		text-align: center;
+		text-decoration: none;
+		background-color: var(--nb-color-surface-dark);
+		border: var(--nb-border-width) solid var(--nb-color-surface-dark);
+		border-radius: var(--nb-radius-pill);
+		transition:
+			color var(--nb-transition),
+			background-color var(--nb-transition),
+			border-color var(--nb-transition);
+	}
+
+	.button:hover,
+	.button:focus {
+		color: var(--nb-color-on-dark);
+		background-color: var(--nb-color-accent);
+		border-color: var(--nb-color-accent);
+	}
+}

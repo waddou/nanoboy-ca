@@ -21,7 +21,7 @@
 		block-size: 4px;
 		margin-block-start: var(--nb-space-2);
 		content: "";
-		background-color: var(--nb-color-accent);
+		background: linear-gradient(90deg, var(--nb-color-accent-hover), var(--nb-color-accent));
 		border-radius: var(--nb-radius-pill);
 	}
 
@@ -36,8 +36,9 @@
 	.entry__content {
 		padding: var(--nb-space-5);
 		background-color: var(--nb-color-surface);
-		border: var(--nb-border);
+		border: 1px solid rgba(201, 223, 235, 0.78);
 		border-radius: var(--nb-radius-lg);
+		box-shadow: var(--nb-shadow-sm);
 		font-size: var(--nb-font-size-lg);
 	}
 
@@ -93,8 +94,10 @@
 
 	.related-posts__item {
 		overflow: hidden;
-		border: var(--nb-border);
-		border-radius: var(--nb-radius);
+		background-color: var(--nb-color-surface);
+		border: 1px solid rgba(201, 223, 235, 0.78);
+		border-radius: var(--nb-radius-lg);
+		box-shadow: var(--nb-shadow-sm);
 	}
 
 	.related-posts__media {

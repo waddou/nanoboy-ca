@@ -26,7 +26,7 @@
 	.sidebar__widget {
 		padding: var(--nb-space-4);
 		background-color: var(--nb-color-surface);
-		border: var(--nb-border);
+		border: 1px solid rgba(201, 223, 235, 0.78);
 		border-radius: var(--nb-radius-lg);
 		box-shadow: var(--nb-shadow-sm);
 	}
@@ -46,11 +46,11 @@
 
 	.sidebar__title::after {
 		display: block;
-		inline-size: var(--nb-space-5);
+		inline-size: var(--nb-space-6);
 		block-size: 3px;
 		margin-block-start: var(--nb-space-2);
 		content: "";
-		background-color: var(--nb-color-accent);
+		background: linear-gradient(90deg, var(--nb-color-accent-hover), var(--nb-color-accent));
 		border-radius: var(--nb-radius-pill);
 	}
 
@@ -85,7 +85,7 @@
 		block-size: 3px;
 		margin-block-start: var(--nb-space-2);
 		content: "";
-		background-color: var(--nb-color-accent);
+		background: linear-gradient(90deg, var(--nb-color-accent-hover), var(--nb-color-accent));
 		border-radius: var(--nb-radius-pill);
 	}
 

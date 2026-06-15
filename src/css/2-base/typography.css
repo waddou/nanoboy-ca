@@ -37,7 +37,7 @@
 		color: var(--nb-color-text-strong);
 		font-weight: var(--nb-font-weight-bold);
 		line-height: var(--nb-line-height-tight);
-		letter-spacing: -0.035em;
+		letter-spacing: -0.055em;
 		text-wrap: balance; /* Évite les veuves sur les titres. */
 	}
 

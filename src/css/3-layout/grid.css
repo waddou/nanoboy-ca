@@ -57,6 +57,6 @@
 	.grid-cards {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr);
-		gap: var(--nb-space-4); /* Aligné sur le padding interne des cartes. */
+		gap: var(--nb-space-3);
 	}
 }

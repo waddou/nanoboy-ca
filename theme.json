@@ -35,8 +35,8 @@
 			"fontFamilies": [
 				{
 					"slug": "system",
-					"name": "System sans-serif",
-					"fontFamily": "system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\""
+					"name": "Editorial sans-serif",
+					"fontFamily": "\"Avenir Next\", Avenir, \"Segoe UI Variable\", \"Segoe UI\", system-ui, sans-serif"
 				},
 				{
 					"slug": "serif",

@@ -40,13 +40,15 @@
 		--nb-font-system: system-ui, -apple-system, "Segoe UI", Roboto,
 			"Helvetica Neue", Arial, "Noto Sans", sans-serif,
 			"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+		--nb-font-editorial: "Avenir Next", Avenir, "Segoe UI Variable",
+			"Segoe UI", system-ui, sans-serif;
 		--nb-font-serif: Charter, "Bitstream Charter", "Sitka Text", Cambria,
 			Georgia, "Times New Roman", serif;
 		--nb-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
 			"Liberation Mono", monospace;
 
-		--nb-font-body: var(--nb-font-system);
-		--nb-font-heading: var(--nb-font-system);
+		--nb-font-body: var(--nb-font-editorial);
+		--nb-font-heading: var(--nb-font-editorial);
 
 		/* Échelle de tailles (fluide via clamp pour les gros titres). */
 		--nb-font-size-xs: 0.75rem; /* 12px */

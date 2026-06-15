@@ -1,10 +1,8 @@
 /**
- * NanoBoy — Carte article des listings.
+ * NanoBoy — Listing M2 « guide pratique ».
  *
- * Carte horizontale compacte : miniature inset arrondie à gauche (ratio 3:2,
- * plafonnée à --nb-card-thumb-max = 300px), contenu à droite. La variante
- * .card--featured (hero accueil) garde un grand visuel 16:9 et empile sur
- * mobile. .card--no-media étire le contenu sur toute la largeur.
+ * Les cartes standard ressemblent à des réponses numérotées, compactes et
+ * faciles à parcourir. La carte mise en avant conserve le hero immersif A2.
  *
  * Couche : components.
  */
@@ -13,36 +11,42 @@
 	.card {
 		position: relative;
 		display: grid;
-		grid-template-columns: clamp(7.5rem, 34%, var(--nb-card-thumb-max)) minmax(0, 1fr);
+		grid-template-columns: 3.25rem minmax(0, 1fr);
 		gap: var(--nb-space-3);
 		align-items: center;
-		padding: var(--nb-space-3);
+		min-block-size: 6rem;
+		padding: var(--nb-space-3) var(--nb-space-4);
 		background-color: var(--nb-color-surface);
-		border: 1px solid rgba(201, 223, 235, 0.78);
+		border: 1px solid rgba(201, 223, 235, 0.82);
 		border-radius: var(--nb-radius-lg);
 		box-shadow: var(--nb-shadow-sm);
-		transition:
-			border-color var(--nb-transition),
-			box-shadow var(--nb-transition),
-			transform var(--nb-transition);
+		transition: border-color var(--nb-transition), box-shadow var(--nb-transition), transform var(--nb-transition);
 	}
 
 	.card:hover {
 		border-color: var(--nb-color-accent);
 		box-shadow: var(--nb-shadow-hover);
-		transform: translateY(-2px);
+		transform: translateX(3px);
 	}
 
-	.card--no-media {
-		grid-template-columns: minmax(0, 1fr);
+	.card__number {
+		display: grid;
+		place-items: center;
+		inline-size: 3.25rem;
+		block-size: 3.25rem;
+		color: var(--nb-color-accent);
+		background-color: var(--nb-color-accent-soft);
+		border-radius: var(--nb-radius);
+		font-size: var(--nb-font-size-base);
+		font-weight: var(--nb-font-weight-bold);
+		letter-spacing: -0.05em;
 	}
 
 	.card__media {
-		display: block;
+		display: none;
 		overflow: hidden;
-		inline-size: 100%;
-		max-inline-size: var(--nb-card-thumb-max); /* 300×200 max, ratio préservé. */
-		aspect-ratio: var(--nb-card-thumb-ratio);
+		inline-size: 5.5rem;
+		aspect-ratio: 1;
 		background-color: var(--nb-color-bg-subtle);
 		border-radius: var(--nb-radius);
 	}
@@ -61,8 +65,9 @@
 	}
 
 	.card__title {
-		margin-block: 0;
-		font-size: var(--nb-font-size-xl);
+		margin: var(--nb-space-1) 0 0;
+		font-size: var(--nb-font-size-lg);
+		letter-spacing: -0.045em;
 	}
 
 	.card__title-link {
@@ -76,32 +81,24 @@
 	}
 
 	.card__excerpt {
-		display: none; /* Trop étroit sous --nb-bp-sm : titre + meta suffisent. */
-		margin-block-start: var(--nb-space-2);
-		color: var(--nb-color-text);
+		display: none;
 	}
 
 	.card__meta {
-		display: none;
+		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
 		gap: var(--nb-space-2);
 		color: var(--nb-color-muted);
-		font-size: var(--nb-font-size-sm);
+		font-size: var(--nb-font-size-xs);
 		font-weight: var(--nb-font-weight-medium);
 	}
 
-	/* Catégorie en pastille : seul accent fort de la carte. */
 	.card__category {
-		display: inline-flex;
-		align-items: center;
-		padding: var(--nb-space-1) var(--nb-space-2);
-		color: var(--nb-color-accent-hover);
-		background-color: var(--nb-color-accent-soft);
-		border-radius: var(--nb-radius-pill);
-		font-size: 0.75rem;
+		color: var(--nb-color-accent);
+		font-size: var(--nb-font-size-xs);
 		font-weight: var(--nb-font-weight-bold);
-		letter-spacing: 0.04em;
+		letter-spacing: 0.08em;
 		line-height: 1;
 		text-decoration: none;
 		text-transform: uppercase;
@@ -109,8 +106,7 @@
 
 	.card__category:hover,
 	.card__category:focus {
-		color: var(--nb-color-on-dark);
-		background-color: var(--nb-color-accent);
+		color: var(--nb-color-accent-hover);
 	}
 
 	.card__reading-time::before {
@@ -119,39 +115,59 @@
 		color: var(--nb-color-muted-soft);
 	}
 
-	@media (min-width: 30rem) { /* --nb-bp-sm */
+	@media (min-width: 30rem) {
 		.card {
-			gap: var(--nb-space-4);
-			padding: var(--nb-space-4);
-		}
-	}
-
-	@media (min-width: 48rem) { /* --nb-bp-md */
-		.card__meta {
-			display: flex;
+			grid-template-columns: 4rem minmax(0, 1fr) 5.5rem;
 		}
 
-		.card__title {
-			margin-block-start: var(--nb-space-2);
+		.card__number {
+			inline-size: 4rem;
+			block-size: 4rem;
+			font-size: var(--nb-font-size-lg);
 		}
 
-		.card__excerpt {
+		.card__media {
 			display: block;
+			grid-column: 3;
+			grid-row: 1;
+		}
+
+		.card__body {
+			grid-column: 2;
+			grid-row: 1;
 		}
 	}
 
-	/* — Carte mise en avant (hero accueil) — */
 	.card--featured {
-		grid-template-columns: minmax(0, 1fr); /* Mobile : visuel empilé au-dessus. */
+		grid-template-columns: minmax(0, 1fr);
+		gap: var(--nb-space-4);
 		color: rgba(255, 255, 255, 0.84);
 		background: linear-gradient(135deg, var(--nb-color-accent-hover), var(--nb-color-accent));
 		border-color: rgba(255, 255, 255, 0.16);
 		box-shadow: 0 24px 58px rgba(7, 80, 126, 0.24);
+		transform: none;
+	}
+
+	.card--featured:hover {
+		transform: translateY(-2px);
 	}
 
 	.card--featured .card__media {
+		display: block;
+		grid-column: auto;
+		grid-row: auto;
+		inline-size: 100%;
 		max-inline-size: none;
 		aspect-ratio: var(--nb-card-image-ratio);
+	}
+
+	.card--featured .card__body {
+		grid-column: auto;
+		grid-row: auto;
+	}
+
+	.card--featured .card__title {
+		font-size: var(--nb-font-size-2xl);
 	}
 
 	.card--featured .card__title-link,
@@ -160,29 +176,33 @@
 		color: var(--nb-color-on-dark);
 	}
 
-	.card--featured .card__excerpt,
+	.card--featured .card__excerpt {
+		display: block;
+		margin-block-start: var(--nb-space-2);
+		color: rgba(255, 255, 255, 0.78);
+	}
+
 	.card--featured .card__meta {
 		color: rgba(255, 255, 255, 0.78);
 	}
 
 	.card--featured .card__category {
-		color: var(--nb-color-accent-hover);
-		background-color: var(--nb-color-on-dark);
+		color: var(--nb-color-on-dark);
 	}
 
-	.card--featured .card__reading-time::before {
-		color: rgba(255, 255, 255, 0.55);
-	}
-
-	.card--featured .card__title {
-		font-size: var(--nb-font-size-2xl);
-	}
-
-	@media (min-width: 64rem) { /* --nb-bp-lg */
+	@media (min-width: 64rem) {
 		.card--featured {
 			grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
 			gap: var(--nb-space-5);
 			padding: var(--nb-space-5);
+		}
+
+		.card--featured .card__media {
+			grid-column: 1;
+		}
+
+		.card--featured .card__body {
+			grid-column: 2;
 		}
 
 		.card--featured .card__title {

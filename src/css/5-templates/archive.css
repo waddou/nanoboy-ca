@@ -8,11 +8,8 @@
 	/* En-tête ouvert (sans boîte) : titre + trait accent, signature du thème. */
 	.listing-header {
 		margin-block-end: var(--nb-space-5);
-		padding: var(--nb-space-5);
-		background: linear-gradient(135deg, var(--nb-color-surface), var(--nb-color-accent-soft));
-		border: 1px solid rgba(201, 223, 235, 0.8);
-		border-radius: var(--nb-radius-lg);
-		box-shadow: var(--nb-shadow-sm);
+		padding-block-end: var(--nb-space-4);
+		border-block-end: var(--nb-border);
 	}
 
 	.listing-header__title {

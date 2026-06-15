@@ -22,8 +22,12 @@
 		display: grid;
 		grid-template-columns: minmax(0, 1fr); /* Mobile : empilé, sans débordement min-content. */
 		gap: var(--nb-grid-gap);
-		/* Haut resserré (zone de flottaison), bas généreux avant le footer. */
 		margin-block: var(--nb-space-5) var(--nb-space-7);
+		padding: var(--nb-space-4);
+		background-color: var(--nb-color-surface);
+		border: 1px solid rgba(201, 223, 235, 0.72);
+		border-radius: var(--nb-radius-lg);
+		box-shadow: 0 20px 60px rgba(7, 80, 126, 0.1);
 	}
 
 	.layout__main,
@@ -37,6 +41,7 @@
 	@media (min-width: 64rem) { /* --nb-bp-lg */
 		.layout {
 			grid-template-columns: repeat(var(--nb-grid-columns), 1fr);
+			padding: var(--nb-space-6);
 		}
 
 		.layout__main {

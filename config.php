@@ -50,13 +50,13 @@ function nanoboy_config_all(): array {
 
 		// Analytics — Google Analytics 4 (gtag, chargé en async).
 		'analytics' => array(
-			'ga4_id' => '',
+			'ga4_id' => 'G-HXLT8RG722',
 		),
 
 		// Régie publicitaire — Google AdSense (adsbygoogle.js en async).
 		// Rendu et dimensions réservées (anti-CLS) : inc/ads.php + ad-slot.css.
 		'ads' => array(
-			'publisher_id' => '',
+			'publisher_id' => 'ca-pub-9582901796643932',
 			'slots'        => array(
 				'sidebar_top'  => '', // 1ᵉʳ widget sidebar (desktop seul) — 250×250 puis 336×280.
 				'list_top'     => '', // Listes (accueil, archives), 2ᵉ carte — in-article fluid 280px.

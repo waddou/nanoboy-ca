@@ -1,8 +1,5 @@
 /**
- * NanoBoy — Listing M2 « guide pratique ».
- *
- * Les cartes standard ressemblent à des réponses numérotées, compactes et
- * faciles à parcourir. La carte mise en avant conserve le hero immersif A2.
+ * NanoBoy — Cartes compactes avec miniatures et flèche d'action.
  *
  * Couche : components.
  */
@@ -11,26 +8,24 @@
 	.card {
 		position: relative;
 		display: grid;
-		grid-template-columns: 3.25rem minmax(0, 1fr) auto;
+		grid-template-columns: minmax(0, 1fr) auto;
 		gap: var(--nb-space-3);
 		align-items: center;
-		min-block-size: 6rem;
-		padding: var(--nb-space-3) var(--nb-space-4);
+		padding: var(--nb-space-3);
 		background-color: var(--nb-color-surface);
-		border: 1px solid rgba(201, 223, 235, 0.82);
-		border-radius: var(--nb-radius-lg);
-		box-shadow: var(--nb-shadow-sm);
+		border: 1px solid var(--nb-color-border);
+		border-radius: var(--nb-radius);
 		transition: border-color var(--nb-transition), box-shadow var(--nb-transition), transform var(--nb-transition);
 	}
 
 	.card:hover {
 		border-color: var(--nb-color-accent);
-		box-shadow: var(--nb-shadow-hover);
+		box-shadow: var(--nb-shadow-sm);
 		transform: translateX(3px);
 	}
 
 	.card::after {
-		grid-column: 3;
+		grid-column: 2;
 		grid-row: 1;
 		content: "›";
 		color: var(--nb-color-accent);
@@ -39,32 +34,20 @@
 		line-height: 1;
 	}
 
-	.card__number {
-		display: grid;
-		place-items: center;
-		inline-size: 3.25rem;
-		block-size: 3.25rem;
-		color: var(--nb-color-accent);
-		background-color: var(--nb-color-accent-soft);
-		border-radius: var(--nb-radius);
-		font-size: var(--nb-font-size-base);
-		font-weight: var(--nb-font-weight-bold);
-		letter-spacing: -0.05em;
-	}
-
 	.card__media {
 		display: none;
 		overflow: hidden;
-		inline-size: 5.5rem;
-		aspect-ratio: 1;
+		inline-size: 7rem;
+		aspect-ratio: 4 / 3;
+		padding: var(--nb-space-1);
 		background-color: var(--nb-color-bg-subtle);
-		border-radius: var(--nb-radius);
+		border-radius: var(--nb-radius-sm);
 	}
 
 	.card__image {
 		inline-size: 100%;
 		block-size: 100%;
-		object-fit: cover;
+		object-fit: contain;
 	}
 
 	.card__body {
@@ -108,7 +91,7 @@
 		color: var(--nb-color-accent);
 		font-size: var(--nb-font-size-xs);
 		font-weight: var(--nb-font-weight-bold);
-		letter-spacing: 0.08em;
+		letter-spacing: 0.07em;
 		line-height: 1;
 		text-decoration: none;
 		text-transform: uppercase;
@@ -127,13 +110,17 @@
 
 	@media (min-width: 30rem) {
 		.card {
-			grid-template-columns: 4rem minmax(0, 1fr) auto;
+			grid-template-columns: 7rem minmax(0, 1fr) auto;
 		}
 
-		.card__number {
-			inline-size: 4rem;
-			block-size: 4rem;
-			font-size: var(--nb-font-size-lg);
+		.card::after {
+			grid-column: 3;
+		}
+
+		.card__media {
+			display: block;
+			grid-column: 1;
+			grid-row: 1;
 		}
 
 		.card__body {
@@ -148,6 +135,7 @@
 		color: rgba(255, 255, 255, 0.84);
 		background: linear-gradient(135deg, var(--nb-color-accent-hover), var(--nb-color-accent));
 		border-color: rgba(255, 255, 255, 0.16);
+		border-radius: var(--nb-radius-lg);
 		box-shadow: 0 24px 58px rgba(7, 80, 126, 0.24);
 		transform: none;
 	}
@@ -167,6 +155,11 @@
 		inline-size: 100%;
 		max-inline-size: none;
 		aspect-ratio: var(--nb-card-image-ratio);
+		padding: 0;
+	}
+
+	.card--featured .card__image {
+		object-fit: cover;
 	}
 
 	.card--featured .card__body {

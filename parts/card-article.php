@@ -39,13 +39,8 @@ $nanoboy_card_image_args = $nanoboy_card_featured
 $nanoboy_card_categories = get_the_category( $nanoboy_card_post->ID );
 $nanoboy_card_category   = $nanoboy_card_categories[0] ?? null;
 $nanoboy_card_minutes    = nanoboy_reading_time( $nanoboy_card_post );
-$nanoboy_card_number     = isset( $args['number'] ) ? absint( $args['number'] ) : 0;
 ?>
 <article <?php post_class( $nanoboy_card_class, $nanoboy_card_post->ID ); ?>>
-	<?php if ( ! $nanoboy_card_featured && 0 < $nanoboy_card_number ) : ?>
-		<span class="card__number" aria-hidden="true"><?php echo esc_html( str_pad( (string) $nanoboy_card_number, 2, '0', STR_PAD_LEFT ) ); ?></span>
-	<?php endif; ?>
-
 	<?php if ( $nanoboy_card_has_media ) : ?>
 		<a class="card__media" href="<?php echo esc_url( get_permalink( $nanoboy_card_post ) ); ?>" tabindex="-1" aria-hidden="true">
 			<?php nanoboy_thumbnail( $nanoboy_card_post, $nanoboy_card_image_size, 'card__image', $nanoboy_card_image_args ); ?>

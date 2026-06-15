@@ -58,10 +58,10 @@ function nanoboy_config_all(): array {
 		'ads' => array(
 			'publisher_id' => 'ca-pub-9582901796643932',
 			'slots'        => array(
-				'sidebar_top'  => '', // 1ᵉʳ widget sidebar (desktop seul) — 250×250 puis 336×280.
-				'list_top'     => '', // Listes (accueil, archives), 2ᵉ carte — in-article fluid 280px.
-				'list_in_feed' => '', // Listes (accueil, archives), 4ᵉ carte — in-article fluid 280px.
-				'article_top'  => '', // Haut d'article (single) — pleine largeur, hauteur 280px.
+				'sidebar_top'  => '8020999981', // 1ᵉʳ widget sidebar (desktop seul) — 250×250 puis 336×280.
+				'list_top'     => '5147424639', // Listes (accueil, archives), 2ᵉ carte — in-article fluid 280px.
+				'list_in_feed' => '4540919976', // Listes (accueil, archives), 4ᵉ carte — in-article fluid 280px.
+				'article_top'  => '7323340661', // Haut d'article (single) — pleine largeur, hauteur 280px.
 			),
 		),
 

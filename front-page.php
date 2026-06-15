@@ -68,7 +68,7 @@ get_header();
 							$nanoboy_posts_query->the_post();
 							++$nanoboy_post_count;
 
-							get_template_part( 'parts/card-article' );
+							get_template_part( 'parts/card-article', null, array( 'number' => $nanoboy_post_count ) );
 
 							// Pubs « cartes » aux positions 2 et 4 de la grille.
 							if ( 1 === $nanoboy_post_count ) {

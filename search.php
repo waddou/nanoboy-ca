@@ -31,9 +31,12 @@ get_header();
 			<?php if ( have_posts() ) : ?>
 				<div class="grid-cards">
 					<?php
+					$nanoboy_post_count = 0;
+
 					while ( have_posts() ) :
 						the_post();
-						get_template_part( 'parts/card-article' );
+						++$nanoboy_post_count;
+						get_template_part( 'parts/card-article', null, array( 'number' => $nanoboy_post_count ) );
 					endwhile;
 					?>
 				</div>

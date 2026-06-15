@@ -11,7 +11,7 @@
 	.card {
 		position: relative;
 		display: grid;
-		grid-template-columns: 3.25rem minmax(0, 1fr);
+		grid-template-columns: 3.25rem minmax(0, 1fr) auto;
 		gap: var(--nb-space-3);
 		align-items: center;
 		min-block-size: 6rem;
@@ -27,6 +27,16 @@
 		border-color: var(--nb-color-accent);
 		box-shadow: var(--nb-shadow-hover);
 		transform: translateX(3px);
+	}
+
+	.card::after {
+		grid-column: 3;
+		grid-row: 1;
+		content: "›";
+		color: var(--nb-color-accent);
+		font-size: var(--nb-font-size-3xl);
+		font-weight: var(--nb-font-weight-normal);
+		line-height: 1;
 	}
 
 	.card__number {
@@ -117,19 +127,13 @@
 
 	@media (min-width: 30rem) {
 		.card {
-			grid-template-columns: 4rem minmax(0, 1fr) 5.5rem;
+			grid-template-columns: 4rem minmax(0, 1fr) auto;
 		}
 
 		.card__number {
 			inline-size: 4rem;
 			block-size: 4rem;
 			font-size: var(--nb-font-size-lg);
-		}
-
-		.card__media {
-			display: block;
-			grid-column: 3;
-			grid-row: 1;
 		}
 
 		.card__body {
@@ -146,6 +150,10 @@
 		border-color: rgba(255, 255, 255, 0.16);
 		box-shadow: 0 24px 58px rgba(7, 80, 126, 0.24);
 		transform: none;
+	}
+
+	.card--featured::after {
+		display: none;
 	}
 
 	.card--featured:hover {

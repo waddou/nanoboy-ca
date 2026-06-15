@@ -16,15 +16,15 @@
 			"defaultGradients": false,
 			"defaultPalette": false,
 			"palette": [
-				{ "slug": "accent", "name": "Accent", "color": "#1e6091" },
-				{ "slug": "link", "name": "Link", "color": "#1e6091" },
-				{ "slug": "text", "name": "Text", "color": "#33414b" },
-				{ "slug": "text-strong", "name": "Text strong", "color": "#101820" },
-				{ "slug": "bg", "name": "Background", "color": "#f4f8fb" },
+				{ "slug": "accent", "name": "Accent", "color": "#0274be" },
+				{ "slug": "link", "name": "Link", "color": "#0274be" },
+				{ "slug": "text", "name": "Text", "color": "#294657" },
+				{ "slug": "text-strong", "name": "Text strong", "color": "#0c2d40" },
+				{ "slug": "bg", "name": "Background", "color": "#f1f7fb" },
 				{ "slug": "surface", "name": "Surface", "color": "#ffffff" },
-				{ "slug": "border", "name": "Border", "color": "#cbdbe6" },
-				{ "slug": "muted", "name": "Muted", "color": "#52616d" },
-				{ "slug": "mark", "name": "Mark", "color": "#dbeafe" }
+				{ "slug": "border", "name": "Border", "color": "#c9dfeb" },
+				{ "slug": "muted", "name": "Muted", "color": "#526c7b" },
+				{ "slug": "mark", "name": "Mark", "color": "#cdeeff" }
 			]
 		},
 		"typography": {

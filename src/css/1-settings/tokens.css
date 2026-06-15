@@ -10,28 +10,28 @@
 
 @layer settings {
 	:root {
-		/* — Couleurs : identité moderne noir + bleu — */
-		--nb-color-accent: #1e6091;
-		--nb-color-accent-hover: #164a70;
-		--nb-color-accent-soft: #e5f1f8;
-		--nb-color-link: #1e6091;
-		--nb-color-link-hover: #123f61;
-		--nb-color-text: #33414b;
-		--nb-color-text-strong: #101820;
-		--nb-color-bg: #f4f8fb;
+		/* — Couleurs : direction A2, bleu immersif Choix Assurances — */
+		--nb-color-accent: #0274be;
+		--nb-color-accent-hover: #07507e;
+		--nb-color-accent-soft: #e3f2fb;
+		--nb-color-link: #0274be;
+		--nb-color-link-hover: #07507e;
+		--nb-color-text: #294657;
+		--nb-color-text-strong: #0c2d40;
+		--nb-color-bg: #f1f7fb;
 		--nb-color-bg-page: var(--nb-color-bg);
-		--nb-color-bg-subtle: #eaf2f7;
+		--nb-color-bg-subtle: #e3f2fb;
 		--nb-color-surface: #fff;
-		--nb-color-surface-glass: rgba(255, 255, 255, 0.92);
-		--nb-color-surface-dark: #0b1117;
-		--nb-color-surface-dark-soft: #23303a;
+		--nb-color-surface-glass: rgba(7, 80, 126, 0.94);
+		--nb-color-surface-dark: #082f49;
+		--nb-color-surface-dark-soft: #0d4668;
 		--nb-color-on-dark: #fff;
-		--nb-color-border: #cbdbe6;
-		--nb-color-muted: #52616d; /* ≥ 4.5:1 sur blanc ET sur bg-subtle (WCAG AA). */
-		--nb-color-muted-soft: #667784;
-		--nb-color-mark: #dbeafe;
-		--nb-color-grid: rgba(30, 96, 145, 0.09);
-		--nb-color-grid-dark: rgba(255, 255, 255, 0.035);
+		--nb-color-border: #c9dfeb;
+		--nb-color-muted: #526c7b;
+		--nb-color-muted-soft: #68818f;
+		--nb-color-mark: #cdeeff;
+		--nb-color-grid: rgba(2, 116, 190, 0.055);
+		--nb-color-grid-dark: rgba(255, 255, 255, 0.045);
 
 		/* Cible de focus (accessibilité — visible sur fond clair). */
 		--nb-color-focus: var(--nb-color-link);
@@ -99,15 +99,15 @@
 		/* — Bordures & rayons — */
 		--nb-border-width: 1px;
 		--nb-border: var(--nb-border-width) solid var(--nb-color-border);
-		--nb-radius-sm: 6px;
-		--nb-radius: 10px;
-		--nb-radius-lg: 18px;
+		--nb-radius-sm: 8px;
+		--nb-radius: 12px;
+		--nb-radius-lg: 20px;
 		--nb-radius-pill: 999px;
 
 		/* — Ombres (discrètes) — */
-		--nb-shadow-sm: 0 4px 18px rgba(16, 24, 32, 0.06);
-		--nb-shadow: 0 16px 44px rgba(30, 96, 145, 0.11);
-		--nb-shadow-hover: 0 20px 54px rgba(30, 96, 145, 0.18);
+		--nb-shadow-sm: 0 8px 24px rgba(7, 80, 126, 0.08);
+		--nb-shadow: 0 18px 48px rgba(7, 80, 126, 0.14);
+		--nb-shadow-hover: 0 24px 58px rgba(2, 116, 190, 0.2);
 		--nb-blur-surface: 18px;
 
 		/* — Transitions — */

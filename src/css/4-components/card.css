@@ -141,12 +141,35 @@
 	/* — Carte mise en avant (hero accueil) — */
 	.card--featured {
 		grid-template-columns: minmax(0, 1fr); /* Mobile : visuel empilé au-dessus. */
-		box-shadow: var(--nb-shadow);
+		color: rgba(255, 255, 255, 0.84);
+		background: linear-gradient(135deg, var(--nb-color-accent-hover), var(--nb-color-accent));
+		border-color: rgba(255, 255, 255, 0.16);
+		box-shadow: 0 24px 58px rgba(7, 80, 126, 0.24);
 	}
 
 	.card--featured .card__media {
 		max-inline-size: none;
 		aspect-ratio: var(--nb-card-image-ratio);
+	}
+
+	.card--featured .card__title-link,
+	.card--featured .card__title-link:hover,
+	.card--featured .card__title-link:focus {
+		color: var(--nb-color-on-dark);
+	}
+
+	.card--featured .card__excerpt,
+	.card--featured .card__meta {
+		color: rgba(255, 255, 255, 0.78);
+	}
+
+	.card--featured .card__category {
+		color: var(--nb-color-accent-hover);
+		background-color: var(--nb-color-on-dark);
+	}
+
+	.card--featured .card__reading-time::before {
+		color: rgba(255, 255, 255, 0.55);
 	}
 
 	.card--featured .card__title {

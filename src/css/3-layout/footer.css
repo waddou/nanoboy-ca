@@ -14,9 +14,10 @@
 		color: var(--nb-color-bg-subtle);
 		background-color: var(--nb-color-surface-dark);
 		background-image:
+			radial-gradient(circle at 15% 20%, rgba(2, 116, 190, 0.35), transparent 26rem),
 			linear-gradient(var(--nb-color-grid-dark) var(--nb-border-width), transparent var(--nb-border-width)),
 			linear-gradient(90deg, var(--nb-color-grid-dark) var(--nb-border-width), transparent var(--nb-border-width));
-		background-size: var(--nb-bg-grid-size) var(--nb-bg-grid-size);
+		background-size: auto, var(--nb-bg-grid-size) var(--nb-bg-grid-size), var(--nb-bg-grid-size) var(--nb-bg-grid-size);
 		border-block-start: 4px solid var(--nb-color-accent);
 	}
 

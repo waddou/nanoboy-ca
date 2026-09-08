@@ -97,6 +97,7 @@
 		--nb-ad-sidebar-sm: 250px; /* Carré 250×250 — sidebar de 1024 à 1199px (colonne ~289px). */
 		--nb-ad-sidebar-width: 336px; /* Grand rectangle 336×280 — sidebar ≥ 1200px (colonne ~347px). */
 		--nb-ad-sidebar-height: 280px;
+		--nb-ad-widget-min-height: 600px; /* Miroir settings.custom.ad.widgetMinHeight. */
 
 		/* — Bordures & rayons — */
 		--nb-border-width: 1px;

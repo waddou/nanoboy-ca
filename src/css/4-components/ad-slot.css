@@ -14,8 +14,13 @@
 	/* Encart volontairement « nu » : ni cadre, ni libellé visible — seul
 	   l'aria-label du fragment PHP identifie la zone pour les lecteurs d'écran. */
 	.ad-slot {
+		--nb-ad-reserved-height: var(--nb-ad-height);
 		display: grid;
-		place-items: center;
+		/* Le moteur fluid réinitialise height ET min-height des ancêtres.
+		   Réserver la piste de grille protège le flux sans toucher à l'<ins>. */
+		grid-template-rows: minmax(var(--nb-ad-reserved-height), auto);
+		/* Une unité vide (0×0) reste ancrée à sa position initiale. */
+		place-items: start;
 		inline-size: 100%;
 		max-inline-size: 100%;
 		min-inline-size: 0;
@@ -37,7 +42,7 @@
 	.ad-slot--list-top,
 	.ad-slot--list-in-feed {
 		margin-block: 0;
-		min-block-size: 0;
+		min-block-size: var(--nb-ad-height);
 		block-size: var(--nb-ad-height);
 	}
 
@@ -46,7 +51,7 @@
 	   flux du contenu (sélecteur « * + * » du template single). */
 	.ad-slot--article-top {
 		margin-block: 0;
-		min-block-size: 0;
+		min-block-size: var(--nb-ad-height);
 		block-size: var(--nb-ad-height);
 	}
 
@@ -59,6 +64,7 @@
 	   (parts/ad-slot.php) → zéro requête mobile. */
 	.ad-slot--sidebar-top {
 		display: none;
+		justify-items: center;
 		margin-block: 0;
 		min-block-size: 0;
 	}
@@ -66,7 +72,9 @@
 	/* --nb-bp-lg : la sidebar passe à côté du contenu (colonne ~289px). */
 	@media (min-width: 64rem) {
 		.ad-slot--sidebar-top {
+			--nb-ad-reserved-height: var(--nb-ad-sidebar-sm);
 			display: grid;
+			min-block-size: var(--nb-ad-sidebar-sm);
 			block-size: var(--nb-ad-sidebar-sm);
 		}
 
@@ -79,6 +87,8 @@
 	/* --nb-bp-xl : la colonne 4/12 atteint ~347px → grand rectangle. */
 	@media (min-width: 75rem) {
 		.ad-slot--sidebar-top {
+			--nb-ad-reserved-height: var(--nb-ad-sidebar-height);
+			min-block-size: var(--nb-ad-sidebar-height);
 			block-size: var(--nb-ad-sidebar-height);
 		}
 

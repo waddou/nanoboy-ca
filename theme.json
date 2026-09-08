@@ -4,6 +4,11 @@
 	"settings": {
 		"appearanceTools": true,
 		"useRootPaddingAwareAlignments": true,
+		"custom": {
+			"ad": {
+				"widgetMinHeight": "600px"
+			}
+		},
 		"layout": {
 			"contentSize": "1200px",
 			"wideSize": "1200px"

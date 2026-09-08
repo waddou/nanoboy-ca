@@ -36,6 +36,14 @@
 		padding-block-end: var(--nb-space-4);
 	}
 
+	/* Les unités AdSense des widgets Texte/HTML WordPress sont hors des
+	   .ad-slot du thème. Réserver leur hauteur avant la réponse (600px
+	   observés en production), y compris si elle revient vide. Le contenu
+	   peut grandir au-delà : aucune annonce n'est tronquée par cette règle. */
+	.sidebar__widget > :is(.textwidget, .custom-html-widget):has(> ins.adsbygoogle) {
+		min-block-size: var(--nb-ad-widget-min-height);
+	}
+
 	/* Titre de widget. */
 	.sidebar__title {
 		margin-block-start: 0;

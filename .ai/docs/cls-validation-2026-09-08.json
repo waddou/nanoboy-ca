@@ -1,0 +1,1347 @@
+{
+  "date": "2026-09-08",
+  "mode": "Production HTML; built local CSS substituted only inside Playwright. No local WordPress and no server edits.",
+  "baseline": {
+    "home": {
+      "mobile": 0.14277054183813442,
+      "desktop": 0.13534355186211142
+    },
+    "article": {
+      "mobile": 0.02849931412894376,
+      "desktop": 0.09022903457474095
+    }
+  },
+  "patchedLive": [
+    {
+      "width": 375,
+      "path": "/",
+      "status": 200,
+      "cls": 0,
+      "shifts": [],
+      "sizes": [
+        {
+          "time": 401.19999998807907,
+          "data": []
+        },
+        {
+          "time": 513,
+          "data": [
+            {
+              "cls": "ad-slot ad-slot--list-top",
+              "y": 342.21875,
+              "h": 280
+            },
+            {
+              "cls": "ad-slot ad-slot--list-in-feed",
+              "y": 796.9375,
+              "h": 280
+            },
+            {
+              "cls": "ad-slot ad-slot--sidebar-top",
+              "y": 0,
+              "h": 0
+            },
+            {
+              "cls": "sidebar__widget widget widget_text",
+              "y": 0,
+              "h": 0
+            },
+            {
+              "cls": "sidebar__widget widget widget_text",
+              "y": 0,
+              "h": 0
+            },
+            {
+              "cls": "sidebar__widget widget widget_text",
+              "y": 0,
+              "h": 0
+            },
+            {
+              "cls": "sidebar__widget widget widget_text",
+              "y": 0,
+              "h": 0
+            }
+          ]
+        }
+      ],
+      "overflow": false,
+      "ads": [
+        {
+          "slot": "5147424639",
+          "status": "unfilled"
+        },
+        {
+          "slot": "4540919976",
+          "status": "unfilled"
+        },
+        {
+          "slot": null,
+          "status": "unfill-optimized"
+        },
+        {
+          "slot": null,
+          "status": "filled"
+        },
+        {
+          "slot": null,
+          "status": "unfilled"
+        },
+        {
+          "slot": null,
+          "status": "unfill-optimized"
+        },
+        {
+          "slot": null,
+          "status": null
+        },
+        {
+          "slot": "8020999981",
+          "status": "unfill-optimized"
+        },
+        {
+          "slot": "5316909086",
+          "status": null
+        },
+        {
+          "slot": "8020999981",
+          "status": null
+        },
+        {
+          "slot": null,
+          "status": "unfilled"
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "path": "/duree-validite-attestation-de-droits.html",
+      "status": 200,
+      "cls": 0.09051872427983539,
+      "shifts": [
+        {
+          "value": 0.08888888888888889,
+          "time": 3872.199999988079,
+          "sources": [
+            {
+              "tag": "DIV",
+              "cls": "site-content",
+              "dx": 0,
+              "dy": 37.65625
+            },
+            {
+              "tag": "HEADER",
+              "cls": "site-header",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "tag": "IFRAME",
+              "cls": "",
+              "dx": -180,
+              "dy": -862.1875
+            }
+          ]
+        },
+        {
+          "value": 2.7434842249657064e-05,
+          "time": 3876.199999988079,
+          "sources": [
+            {
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "dx": 140,
+              "dy": 0
+            }
+          ]
+        },
+        {
+          "value": 4.807956104252401e-05,
+          "time": 3880.7999999523163,
+          "sources": [
+            {
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "dx": 6,
+              "dy": 0
+            }
+          ]
+        },
+        {
+          "value": 5.755829903978052e-05,
+          "time": 3897.399999976158,
+          "sources": [
+            {
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "dx": 0,
+              "dy": 0
+            }
+          ]
+        },
+        {
+          "value": 7.665294924554183e-05,
+          "time": 3914.099999964237,
+          "sources": [
+            {
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "dx": 0,
+              "dy": 0
+            }
+          ]
+        },
+        {
+          "value": 0.00012565157750342936,
+          "time": 3930.5,
+          "sources": [
+            {
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "dx": 0,
+              "dy": 0
+            }
+          ]
+        },
+        {
+          "value": 8.613168724279836e-05,
+          "time": 3947.399999976158,
+          "sources": [
+            {
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "tag": "DIV",
+              "cls": "grippy-host",
+              "dx": 20,
+              "dy": 0
+            }
+          ]
+        },
+        {
+          "value": 0.0001339368998628258,
+          "time": 3964.2999999523163,
+          "sources": [
+            {
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "dx": 0,
+              "dy": 0.15625
+            }
+          ]
+        },
+        {
+          "value": 0.00015303155006858712,
+          "time": 3979.899999976158,
+          "sources": [
+            {
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "dx": 0,
+              "dy": 3.5625
+            }
+          ]
+        },
+        {
+          "value": 0.00012551440329218108,
+          "time": 3997.199999988079,
+          "sources": [
+            {
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "dx": 0,
+              "dy": 3
+            }
+          ]
+        },
+        {
+          "value": 0.00013625514403292182,
+          "time": 4014.199999988079,
+          "sources": [
+            {
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "dx": 0,
+              "dy": 3
+            }
+          ]
+        },
+        {
+          "value": 0.00014699588477366256,
+          "time": 4031.199999988079,
+          "sources": [
+            {
+              "tag": "INS",
+              "cls": "adsbygoogle adsbygoogle-noablate",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "dx": 0,
+              "dy": 3
+            }
+          ]
+        },
+        {
+          "value": 0.0001577366255144033,
+          "time": 4047.7999999523163,
+          "sources": [
+            {
+              "tag": "INS",
+              "cls": "adsbygoogle adsbygoogle-noablate",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "dx": 0,
+              "dy": 3
+            }
+          ]
+        },
+        {
+          "value": 0.00016847736625514404,
+          "time": 4064.399999976158,
+          "sources": [
+            {
+              "tag": "INS",
+              "cls": "adsbygoogle adsbygoogle-noablate",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "dx": 0,
+              "dy": 3
+            }
+          ]
+        },
+        {
+          "value": 0.00018637860082304527,
+          "time": 4096.399999976158,
+          "sources": [
+            {
+              "tag": "INS",
+              "cls": "adsbygoogle adsbygoogle-noablate",
+              "dx": 0,
+              "dy": 0
+            },
+            {
+              "dx": 0,
+              "dy": 3
+            }
+          ]
+        }
+      ],
+      "sizes": [
+        {
+          "time": 353.19999998807907,
+          "data": []
+        },
+        {
+          "time": 451.89999997615814,
+          "data": [
+            {
+              "cls": "ad-slot ad-slot--article-top",
+              "y": 346.34375,
+              "h": 280
+            },
+            {
+              "cls": "ad-slot ad-slot--sidebar-top",
+              "y": 0,
+              "h": 0
+            },
+            {
+              "cls": "sidebar__widget widget widget_text",
+              "y": 0,
+              "h": 0
+            },
+            {
+              "cls": "sidebar__widget widget widget_text",
+              "y": 0,
+              "h": 0
+            },
+            {
+              "cls": "sidebar__widget widget widget_text",
+              "y": 0,
+              "h": 0
+            },
+            {
+              "cls": "sidebar__widget widget widget_text",
+              "y": 0,
+              "h": 0
+            }
+          ]
+        }
+      ],
+      "overflow": false,
+      "ads": [
+        {
+          "slot": "7323340661",
+          "status": "unfill-optimized"
+        },
+        {
+          "slot": null,
+          "status": "unfilled"
+        },
+        {
+          "slot": null,
+          "status": "unfill-optimized"
+        },
+        {
+          "slot": null,
+          "status": "unfill-optimized"
+        },
+        {
+          "slot": null,
+          "status": "unfilled"
+        },
+        {
+          "slot": null,
+          "status": "unfill-optimized"
+        },
+        {
+          "slot": null,
+          "status": null
+        },
+        {
+          "slot": "8020999981",
+          "status": "unfilled"
+        },
+        {
+          "slot": "5316909086",
+          "status": null
+        },
+        {
+          "slot": "8020999981",
+          "status": null
+        },
+        {
+          "slot": null,
+          "status": "unfilled"
+        },
+        {
+          "slot": null,
+          "status": "filled"
+        },
+        {
+          "slot": null,
+          "status": "filled"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "path": "/",
+      "status": 200,
+      "cls": 0,
+      "shifts": [],
+      "sizes": [
+        {
+          "time": 383.2000000476837,
+          "data": []
+        },
+        {
+          "time": 470.5,
+          "data": [
+            {
+              "cls": "ad-slot ad-slot--list-top",
+              "y": 343.671875,
+              "h": 280
+            },
+            {
+              "cls": "ad-slot ad-slot--list-in-feed",
+              "y": 773.671875,
+              "h": 280
+            },
+            {
+              "cls": "ad-slot ad-slot--sidebar-top",
+              "y": 178,
+              "h": 280
+            },
+            {
+              "cls": "sidebar__widget widget widget_text",
+              "y": 490,
+              "h": 650
+            },
+            {
+              "cls": "sidebar__widget widget widget_text",
+              "y": 1172,
+              "h": 650
+            },
+            {
+              "cls": "sidebar__widget widget widget_text",
+              "y": 1854,
+              "h": 301.90625
+            },
+            {
+              "cls": "sidebar__widget widget widget_text",
+              "y": 2187.90625,
+              "h": 353.09375
+            }
+          ]
+        },
+        {
+          "time": 1474.6000000238419,
+          "data": [
+            {
+              "cls": "ad-slot ad-slot--list-top",
+              "y": 343.671875,
+              "h": 280
+            },
+            {
+              "cls": "ad-slot ad-slot--list-in-feed",
+              "y": 773.671875,
+              "h": 280
+            },
+            {
+              "cls": "ad-slot ad-slot--sidebar-top",
+              "y": 178,
+              "h": 280
+            },
+            {
+              "cls": "sidebar__widget widget widget_text",
+              "y": 490,
+              "h": 650
+            },
+            {
+              "cls": "sidebar__widget widget widget_text",
+              "y": 1172,
+              "h": 650
+            },
+            {
+              "cls": "sidebar__widget widget widget_text",
+              "y": 1854,
+              "h": 301.90625
+            },
+            {
+              "cls": "sidebar__widget widget widget_text",
+              "y": 2489.90625,
+              "h": 353.09375
+            }
+          ]
+        }
+      ],
+      "overflow": false,
+      "ads": [
+        {
+          "slot": "5147424639",
+          "status": "filled"
+        },
+        {
+          "slot": "4540919976",
+          "status": "unfilled"
+        },
+        {
+          "slot": null,
+          "status": "unfill-optimized"
+        },
+        {
+          "slot": null,
+          "status": "unfilled"
+        },
+        {
+          "slot": "8020999981",
+          "status": "unfill-optimized"
+        },
+        {
+          "slot": "5316909086",
+          "status": "filled"
+        },
+        {
+          "slot": "8020999981",
+          "status": "unfill-optimized"
+        },
+        {
+          "slot": null,
+          "status": "filled"
+        },
+        {
+          "slot": null,
+          "status": "unfilled"
+        },
+        {
+          "slot": null,
+          "status": "filled"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "path": "/duree-validite-attestation-de-droits.html",
+      "status": 200,
+      "cls": 0,
+      "shifts": [],
+      "sizes": [
+        {
+          "time": 337.30000001192093,
+          "data": []
+        },
+        {
+          "time": 463.2000000476837,
+          "data": [
+            {
+              "cls": "ad-slot ad-slot--article-top",
+              "y": 375.921875,
+              "h": 280
+            },
+            {
+              "cls": "ad-slot ad-slot--sidebar-top",
+              "y": 178,
+              "h": 280
+            },
+            {
+              "cls": "sidebar__widget widget widget_text",
+              "y": 490,
+              "h": 650
+            },
+            {
+              "cls": "sidebar__widget widget widget_text",
+              "y": 1172,
+              "h": 650
+            },
+            {
+              "cls": "sidebar__widget widget widget_text",
+              "y": 1854,
+              "h": 301.90625
+            },
+            {
+              "cls": "sidebar__widget widget widget_text",
+              "y": 2187.90625,
+              "h": 353.09375
+            }
+          ]
+        }
+      ],
+      "overflow": false,
+      "ads": [
+        {
+          "slot": "7323340661",
+          "status": "unfill-optimized"
+        },
+        {
+          "slot": null,
+          "status": "unfilled"
+        },
+        {
+          "slot": null,
+          "status": "unfilled"
+        },
+        {
+          "slot": null,
+          "status": "unfill-optimized"
+        },
+        {
+          "slot": "8020999981",
+          "status": "unfill-optimized"
+        },
+        {
+          "slot": "5316909086",
+          "status": "filled"
+        },
+        {
+          "slot": "8020999981",
+          "status": "unfill-optimized"
+        },
+        {
+          "slot": null,
+          "status": "unfilled"
+        }
+      ]
+    }
+  ],
+  "regression": {
+    "passed": true,
+    "results": [
+      {
+        "width": 375,
+        "path": "/",
+        "checks": [
+          {
+            "name": "empty ad stays at the top of a reserved slot",
+            "before": 342.21875,
+            "after": 342.21875,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 250",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 250",
+            "before": 342.21875,
+            "after": 342.21875,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 250",
+            "before": 41,
+            "after": 41,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 0",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 0",
+            "before": 342.21875,
+            "after": 342.21875,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 0",
+            "before": 41,
+            "after": 41,
+            "pass": true
+          },
+          {
+            "name": "empty ad stays at the top of a reserved slot",
+            "before": 796.9375,
+            "after": 796.9375,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 250",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 250",
+            "before": 796.9375,
+            "after": 796.9375,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 250",
+            "before": 41,
+            "after": 41,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 0",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 0",
+            "before": 796.9375,
+            "after": 796.9375,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 0",
+            "before": 41,
+            "after": 41,
+            "pass": true
+          },
+          {
+            "name": "sidebar stays hidden on mobile",
+            "pass": true
+          },
+          {
+            "name": "no horizontal overflow",
+            "pass": true
+          }
+        ]
+      },
+      {
+        "width": 375,
+        "path": "/duree-validite-attestation-de-droits.html",
+        "checks": [
+          {
+            "name": "empty ad stays at the top of a reserved slot",
+            "before": 346.34375,
+            "after": 346.34375,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 250",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 250",
+            "before": 346.34375,
+            "after": 346.34375,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 250",
+            "before": 74,
+            "after": 74,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 0",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 0",
+            "before": 346.34375,
+            "after": 346.34375,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 0",
+            "before": 74,
+            "after": 74,
+            "pass": true
+          },
+          {
+            "name": "sidebar stays hidden on mobile",
+            "pass": true
+          },
+          {
+            "name": "no horizontal overflow",
+            "pass": true
+          }
+        ]
+      },
+      {
+        "width": 768,
+        "path": "/",
+        "checks": [
+          {
+            "name": "empty ad stays at the top of a reserved slot",
+            "before": 301.109375,
+            "after": 301.109375,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 250",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 250",
+            "before": 301.109375,
+            "after": 301.109375,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 250",
+            "before": 48.03125,
+            "after": 48.03125,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 0",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 0",
+            "before": 301.109375,
+            "after": 301.109375,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 0",
+            "before": 48.03125,
+            "after": 48.03125,
+            "pass": true
+          },
+          {
+            "name": "empty ad stays at the top of a reserved slot",
+            "before": 731.109375,
+            "after": 731.109375,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 250",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 250",
+            "before": 731.109375,
+            "after": 731.109375,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 250",
+            "before": 48.03125,
+            "after": 48.03125,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 0",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 0",
+            "before": 731.109375,
+            "after": 731.109375,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 0",
+            "before": 48.03125,
+            "after": 48.03125,
+            "pass": true
+          },
+          {
+            "name": "following sidebar content stays still at ad height 600",
+            "before": 7561.609375,
+            "after": 7561.609375,
+            "pass": true
+          },
+          {
+            "name": "following sidebar content stays still at ad height 0",
+            "before": 7561.609375,
+            "after": 7561.609375,
+            "pass": true
+          },
+          {
+            "name": "no horizontal overflow",
+            "pass": true
+          }
+        ]
+      },
+      {
+        "width": 768,
+        "path": "/duree-validite-attestation-de-droits.html",
+        "checks": [
+          {
+            "name": "empty ad stays at the top of a reserved slot",
+            "before": 324.765625,
+            "after": 324.765625,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 250",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 250",
+            "before": 324.765625,
+            "after": 324.765625,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 250",
+            "before": 81.03125,
+            "after": 81.03125,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 0",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 0",
+            "before": 324.765625,
+            "after": 324.765625,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 0",
+            "before": 81.03125,
+            "after": 81.03125,
+            "pass": true
+          },
+          {
+            "name": "following sidebar content stays still at ad height 600",
+            "before": 15537.078125,
+            "after": 15537.078125,
+            "pass": true
+          },
+          {
+            "name": "following sidebar content stays still at ad height 0",
+            "before": 15537.078125,
+            "after": 15537.078125,
+            "pass": true
+          },
+          {
+            "name": "no horizontal overflow",
+            "pass": true
+          }
+        ]
+      },
+      {
+        "width": 1024,
+        "path": "/",
+        "checks": [
+          {
+            "name": "empty ad stays at the top of a reserved slot",
+            "before": 350.359375,
+            "after": 350.359375,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 250",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 250",
+            "before": 350.359375,
+            "after": 350.359375,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 250",
+            "before": 79.71875,
+            "after": 79.71875,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 0",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 0",
+            "before": 350.359375,
+            "after": 350.359375,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 0",
+            "before": 79.71875,
+            "after": 79.71875,
+            "pass": true
+          },
+          {
+            "name": "empty ad stays at the top of a reserved slot",
+            "before": 787.046875,
+            "after": 787.046875,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 250",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 250",
+            "before": 787.046875,
+            "after": 787.046875,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 250",
+            "before": 79.71875,
+            "after": 79.71875,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 0",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 0",
+            "before": 787.046875,
+            "after": 787.046875,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 0",
+            "before": 79.71875,
+            "after": 79.71875,
+            "pass": true
+          },
+          {
+            "name": "following sidebar content stays still at ad height 600",
+            "before": 1824,
+            "after": 1824,
+            "pass": true
+          },
+          {
+            "name": "following sidebar content stays still at ad height 0",
+            "before": 1824,
+            "after": 1824,
+            "pass": true
+          },
+          {
+            "name": "no horizontal overflow",
+            "pass": true
+          }
+        ]
+      },
+      {
+        "width": 1024,
+        "path": "/duree-validite-attestation-de-droits.html",
+        "checks": [
+          {
+            "name": "empty ad stays at the top of a reserved slot",
+            "before": 451.578125,
+            "after": 451.578125,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 250",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 250",
+            "before": 451.578125,
+            "after": 451.578125,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 250",
+            "before": 112.71875,
+            "after": 112.71875,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 0",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 0",
+            "before": 451.578125,
+            "after": 451.578125,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 0",
+            "before": 112.71875,
+            "after": 112.71875,
+            "pass": true
+          },
+          {
+            "name": "following sidebar content stays still at ad height 600",
+            "before": 1824,
+            "after": 1824,
+            "pass": true
+          },
+          {
+            "name": "following sidebar content stays still at ad height 0",
+            "before": 1824,
+            "after": 1824,
+            "pass": true
+          },
+          {
+            "name": "no horizontal overflow",
+            "pass": true
+          }
+        ]
+      },
+      {
+        "width": 1440,
+        "path": "/",
+        "checks": [
+          {
+            "name": "empty ad stays at the top of a reserved slot",
+            "before": 343.671875,
+            "after": 343.671875,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 250",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 250",
+            "before": 343.671875,
+            "after": 343.671875,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 250",
+            "before": 193.5,
+            "after": 193.5,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 0",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 0",
+            "before": 343.671875,
+            "after": 343.671875,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 0",
+            "before": 193.5,
+            "after": 193.5,
+            "pass": true
+          },
+          {
+            "name": "empty ad stays at the top of a reserved slot",
+            "before": 773.671875,
+            "after": 773.671875,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 250",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 250",
+            "before": 773.671875,
+            "after": 773.671875,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 250",
+            "before": 193.5,
+            "after": 193.5,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 0",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 0",
+            "before": 773.671875,
+            "after": 773.671875,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 0",
+            "before": 193.5,
+            "after": 193.5,
+            "pass": true
+          },
+          {
+            "name": "following sidebar content stays still at ad height 600",
+            "before": 1854,
+            "after": 1854,
+            "pass": true
+          },
+          {
+            "name": "following sidebar content stays still at ad height 0",
+            "before": 1854,
+            "after": 1854,
+            "pass": true
+          },
+          {
+            "name": "no horizontal overflow",
+            "pass": true
+          }
+        ]
+      },
+      {
+        "width": 1440,
+        "path": "/duree-validite-attestation-de-droits.html",
+        "checks": [
+          {
+            "name": "empty ad stays at the top of a reserved slot",
+            "before": 375.921875,
+            "after": 375.921875,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 250",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 250",
+            "before": 375.921875,
+            "after": 375.921875,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 250",
+            "before": 226.5,
+            "after": 226.5,
+            "pass": true
+          },
+          {
+            "name": "slot preserves space at ad height 0",
+            "before": 280,
+            "after": 280,
+            "pass": true
+          },
+          {
+            "name": "ad stays vertically anchored at height 0",
+            "before": 375.921875,
+            "after": 375.921875,
+            "pass": true
+          },
+          {
+            "name": "ad stays horizontally anchored at height 0",
+            "before": 226.5,
+            "after": 226.5,
+            "pass": true
+          },
+          {
+            "name": "following sidebar content stays still at ad height 600",
+            "before": 1854,
+            "after": 1854,
+            "pass": true
+          },
+          {
+            "name": "following sidebar content stays still at ad height 0",
+            "before": 1854,
+            "after": 1854,
+            "pass": true
+          },
+          {
+            "name": "no horizontal overflow",
+            "pass": true
+          }
+        ]
+      }
+    ]
+  },
+  "residualProbes": [
+    [],
+    []
+  ],
+  "note": "One patched article mobile run had a late CLS 0.09051872427983539 involving site-content, header and automatic ad UI. Two subsequent instrumented runs had no shifts. Exact mechanism not reproduced; do not claim global CLS zero. Default production AdSense was active in live tests."
+}

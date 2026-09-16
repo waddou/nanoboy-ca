@@ -3,8 +3,8 @@
  * NanoBoy — Chargement des assets.
  *
  * Enqueue les deux seuls bundles servis en prod (`app.min.css` + `app.min.js`,
- * versionnés par `filemtime`) et injecte les scripts tiers (GA4, AdSense) en
- * chargement `async` non bloquant.
+ * versionnés par `filemtime`), imprime GA4 (gtag.js) tout en haut du `<head>`
+ * et injecte AdSense en chargement `async` non bloquant.
  *
  * @package NanoBoy
  */
@@ -65,36 +65,42 @@ function nanoboy_enqueue_assets(): void {
 add_action( 'wp_enqueue_scripts', 'nanoboy_enqueue_assets' );
 
 /**
- * Enqueue Google Analytics 4 (gtag.js) en async.
+ * Imprime Google Analytics 4 (gtag.js) tout en haut du `<head>`.
+ *
+ * On émet le snippet directement sur `wp_head` plutôt que via
+ * `wp_enqueue_script` : avec sa stratégie de chargement différée (`async` +
+ * script inline `after`), le cœur renvoyait le tag en pied de page — invisible
+ * pour la méthode de validation « Google Analytics » de la Search Console, qui
+ * exige le snippet dans le `<head>`. Priorité 3 par cohérence avec le reste du
+ * réseau, où la priorité 2 est prise par le préchargement des polices.
+ *
+ * `nowprocket` : exclut le snippet du « Delay JS » de WP Rocket en prod. Sans
+ * cette garde, gtag ne se déclencherait qu'à la première interaction et ni le
+ * robot de vérification Search Console ni les rapports temps réel de GA ne
+ * verraient GA s'exécuter au chargement.
  *
  * @return void
  */
-function nanoboy_enqueue_analytics(): void {
+function nanoboy_print_analytics(): void {
 	$ga4_id = (string) nanoboy_config( 'analytics.ga4_id', '' );
 
 	if ( '' === $ga4_id ) {
 		return;
 	}
 
-	wp_enqueue_script(
-		'nanoboy-gtag',
-		'https://www.googletagmanager.com/gtag/js?id=' . rawurlencode( $ga4_id ),
-		array(),
-		null,
-		array( 'strategy' => 'async' )
-	);
-
-	$inline = sprintf(
-		'window.dataLayer = window.dataLayer || [];' .
-		'function gtag(){dataLayer.push(arguments);}' .
-		"gtag('js', new Date());" .
-		"gtag('config', '%s');",
-		esc_js( $ga4_id )
-	);
-
-	wp_add_inline_script( 'nanoboy-gtag', $inline, 'after' );
+	$src = 'https://www.googletagmanager.com/gtag/js?id=' . rawurlencode( $ga4_id );
+	?>
+	<!-- Google tag (gtag.js) -->
+	<script async src="<?php echo esc_url( $src ); ?>" nowprocket></script>
+	<script nowprocket>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', '<?php echo esc_js( $ga4_id ); ?>');
+	</script>
+	<?php
 }
-add_action( 'wp_enqueue_scripts', 'nanoboy_enqueue_analytics' );
+add_action( 'wp_head', 'nanoboy_print_analytics', 3 );
 
 /**
  * Enqueue le script AdSense (adsbygoogle.js) en async.

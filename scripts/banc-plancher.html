@@ -1,0 +1,152 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Banc d'essai — plancher publicitaire : pseudo-élément vs piste de grille</title>
+<!--
+  Confronte les deux réservations de hauteur aux comportements d'AdSense
+  RELEVÉS EN PRODUCTION sur le réseau NanoBoy :
+
+    1. `height: auto !important` inline sur le conteneur .ad-slot  (mesuré)
+    2. l'<ins> retombe à 0 quand l'annonce n'est pas servie          (mesuré)
+    3. l'<ins> est réduit (280 → 274 → 248)                          (mesuré)
+    4. `min-height: auto !important` inline — le commentaire de nanoboy-ca
+       affirme que « le moteur fluid réinitialise height ET min-height des
+       ancêtres » : on teste donc aussi ce cas, plus agressif.
+
+  A = pseudo-élément (17 thèmes de themes/), vérifié en production le 16/09.
+  B = piste de grille (nanoboy-ca, 08/09), jamais confronté au !important.
+-->
+<style>
+  :root { --nb-ad-height: 280px; --nb-ad-list-min-height: 0px; --nb-space-5: 16px; }
+  body { font: 14px/1.5 system-ui, sans-serif; margin: 20px; }
+  .cas { border: 1px solid #ccc; margin-block: 8px; padding: 4px; }
+  .cas > p { margin: 0 0 4px; font-weight: 600; }
+
+  /* ---- Socle commun aux deux approches ---- */
+  .ad-slot {
+    display: grid;
+    inline-size: 100%;
+    max-inline-size: 100%;
+    min-inline-size: 0;
+    min-block-size: var(--nb-ad-list-min-height);
+    margin-block: var(--nb-space-5);
+    overflow: hidden;
+    background: #eef;
+  }
+  .ad-slot__unit { display: block; inline-size: 100%; max-inline-size: 100%; min-inline-size: 0; background: #99f; }
+
+  /* ---- A : plancher par pseudo-élément (réseau) ---- */
+  .a .ad-slot { place-items: center; }
+  .a .ad-slot--list-top::before { grid-area: 1 / 1; block-size: var(--nb-ad-height); content: ""; }
+  .a .ad-slot--list-top > .ad-slot__unit { grid-area: 1 / 1; }
+
+  /* ---- B : réservation par piste de grille (nanoboy-ca) ---- */
+  .b .ad-slot {
+    --nb-ad-reserved-height: var(--nb-ad-height);
+    grid-template-rows: minmax(var(--nb-ad-reserved-height), auto);
+    place-items: start;
+  }
+
+  /* ---- C : la combinaison — piste de grille (B) + pseudo-élément (A) rendu
+     block, pour tenir même si la grille saute. ---- */
+  .c .ad-slot {
+    --nb-ad-reserved-height: var(--nb-ad-height);
+    grid-template-rows: minmax(var(--nb-ad-reserved-height), auto);
+    place-items: start;
+  }
+  .c .ad-slot::before {
+    content: "";
+    grid-area: 1 / 1;
+    display: block;               /* sans quoi le pseudo redevient inline hors grille */
+    block-size: var(--nb-ad-reserved-height);
+  }
+  .c .ad-slot > .ad-slot__unit { grid-area: 1 / 1; }
+
+  /* ---- D : comme C, mais TOUT enfant partage la cellule réservée, pas
+     seulement .ad-slot__unit — un élément ajouté ne crée plus de ligne. ---- */
+  .d .ad-slot {
+    --nb-ad-reserved-height: var(--nb-ad-height);
+    grid-template-rows: minmax(var(--nb-ad-reserved-height), auto);
+    place-items: start;
+  }
+  .d .ad-slot::before {
+    content: "";
+    grid-area: 1 / 1;
+    display: block;
+    block-size: var(--nb-ad-reserved-height);
+  }
+  .d .ad-slot > * { grid-area: 1 / 1; }
+</style>
+
+<h1>Banc d'essai du plancher publicitaire</h1>
+<p>Chaque conteneur doit conserver <strong>280 px</strong> dans tous les cas.</p>
+
+<section class="a">
+  <h2>A — pseudo-élément</h2>
+  <div class="cas"><p>A1 · annonce servie (280 px)</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="A1"><ins class="adsbygoogle ad-slot__unit" style="height:280px"></ins></aside></div>
+  <div class="cas"><p>A2 · height:auto !important inline + &lt;ins&gt; à 0 (non servie)</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="A2" style="height: auto !important"><ins class="adsbygoogle ad-slot__unit" style="height:0px"></ins></aside></div>
+  <div class="cas"><p>A3 · height:auto !important + &lt;ins&gt; réduit à 248</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="A3" style="height: auto !important"><ins class="adsbygoogle ad-slot__unit" style="height:248px"></ins></aside></div>
+  <div class="cas"><p>A4 · height ET min-height auto !important + &lt;ins&gt; à 0</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="A4" style="height: auto !important; min-height: auto !important"><ins class="adsbygoogle ad-slot__unit" style="height:0px"></ins></aside></div>
+  <div class="cas"><p>A5 · &lt;ins&gt; absent du DOM (créneau non rendu)</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="A5" style="height: auto !important"></aside></div>
+  <div class="cas"><p>A6 · annonce PLUS HAUTE que le plancher (336 px) — ne doit pas être tronquée</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="A6"><ins class="adsbygoogle ad-slot__unit" style="height:336px"></ins></aside></div>
+  <div class="cas"><p>A7 · display:block !important sur le conteneur (la grille saute)</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="A7" style="height: auto !important; display: block !important"><ins class="adsbygoogle ad-slot__unit" style="height:0px"></ins></aside></div>
+  <div class="cas"><p>A8 · un label « Publicité » accompagne l'&lt;ins&gt; dans le conteneur</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="A8" style="height: auto !important"><span class="ad-slot__label">Publicite</span><ins class="adsbygoogle ad-slot__unit" style="height:0px"></ins></aside></div>
+</section>
+
+<section class="b">
+  <h2>B — piste de grille</h2>
+  <div class="cas"><p>B1 · annonce servie (280 px)</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="B1"><ins class="adsbygoogle ad-slot__unit" style="height:280px"></ins></aside></div>
+  <div class="cas"><p>B2 · height:auto !important inline + &lt;ins&gt; à 0 (non servie)</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="B2" style="height: auto !important"><ins class="adsbygoogle ad-slot__unit" style="height:0px"></ins></aside></div>
+  <div class="cas"><p>B3 · height:auto !important + &lt;ins&gt; réduit à 248</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="B3" style="height: auto !important"><ins class="adsbygoogle ad-slot__unit" style="height:248px"></ins></aside></div>
+  <div class="cas"><p>B4 · height ET min-height auto !important + &lt;ins&gt; à 0</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="B4" style="height: auto !important; min-height: auto !important"><ins class="adsbygoogle ad-slot__unit" style="height:0px"></ins></aside></div>
+  <div class="cas"><p>B5 · &lt;ins&gt; absent du DOM (créneau non rendu)</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="B5" style="height: auto !important"></aside></div>
+  <div class="cas"><p>B6 · annonce PLUS HAUTE que le plancher (336 px) — ne doit pas être tronquée</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="B6"><ins class="adsbygoogle ad-slot__unit" style="height:336px"></ins></aside></div>
+  <div class="cas"><p>B7 · display:block !important sur le conteneur (la grille saute)</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="B7" style="height: auto !important; display: block !important"><ins class="adsbygoogle ad-slot__unit" style="height:0px"></ins></aside></div>
+  <div class="cas"><p>B8 · un label « Publicité » accompagne l'&lt;ins&gt; dans le conteneur</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="B8" style="height: auto !important"><span class="ad-slot__label">Publicite</span><ins class="adsbygoogle ad-slot__unit" style="height:0px"></ins></aside></div>
+</section>
+
+<section class="c">
+  <h2>C — combinaison grille + pseudo-élément block</h2>
+  <div class="cas"><p>C1 · annonce servie (280 px)</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="C1"><ins class="adsbygoogle ad-slot__unit" style="height:280px"></ins></aside></div>
+  <div class="cas"><p>C2 · height:auto !important + &lt;ins&gt; a 0</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="C2" style="height: auto !important"><ins class="adsbygoogle ad-slot__unit" style="height:0px"></ins></aside></div>
+  <div class="cas"><p>C3 · height:auto !important + &lt;ins&gt; reduit a 248</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="C3" style="height: auto !important"><ins class="adsbygoogle ad-slot__unit" style="height:248px"></ins></aside></div>
+  <div class="cas"><p>C4 · height ET min-height auto !important</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="C4" style="height: auto !important; min-height: auto !important"><ins class="adsbygoogle ad-slot__unit" style="height:0px"></ins></aside></div>
+  <div class="cas"><p>C5 · &lt;ins&gt; absent du DOM</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="C5" style="height: auto !important"></aside></div>
+  <div class="cas"><p>C6 · annonce plus haute (336 px) — ne doit pas etre tronquee</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="C6"><ins class="adsbygoogle ad-slot__unit" style="height:336px"></ins></aside></div>
+  <div class="cas"><p>C7 · display:block !important sur le conteneur</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="C7" style="height: auto !important; display: block !important"><ins class="adsbygoogle ad-slot__unit" style="height:0px"></ins></aside></div>
+  <div class="cas"><p>C8 · un label accompagne l'&lt;ins&gt;</p>
+    <aside class="ad-slot ad-slot--list-top" data-cas="C8" style="height: auto !important"><span class="ad-slot__label">Publicite</span><ins class="adsbygoogle ad-slot__unit" style="height:0px"></ins></aside></div>
+</section>
+<section class="d">
+<h2>D — C + tous les enfants dans la cellule</h2>
+<div class="cas"><p>D1</p><aside class="ad-slot ad-slot--list-top" data-cas="D1"><ins class="adsbygoogle ad-slot__unit" style="height:280px"></ins></aside></div>
+<div class="cas"><p>D2</p><aside class="ad-slot ad-slot--list-top" data-cas="D2" style="height: auto !important"><ins class="adsbygoogle ad-slot__unit" style="height:0px"></ins></aside></div>
+<div class="cas"><p>D3</p><aside class="ad-slot ad-slot--list-top" data-cas="D3" style="height: auto !important"><ins class="adsbygoogle ad-slot__unit" style="height:248px"></ins></aside></div>
+<div class="cas"><p>D4</p><aside class="ad-slot ad-slot--list-top" data-cas="D4" style="height: auto !important; min-height: auto !important"><ins class="adsbygoogle ad-slot__unit" style="height:0px"></ins></aside></div>
+<div class="cas"><p>D5</p><aside class="ad-slot ad-slot--list-top" data-cas="D5" style="height: auto !important"></aside></div>
+<div class="cas"><p>D6</p><aside class="ad-slot ad-slot--list-top" data-cas="D6"><ins class="adsbygoogle ad-slot__unit" style="height:336px"></ins></aside></div>
+<div class="cas"><p>D7</p><aside class="ad-slot ad-slot--list-top" data-cas="D7" style="height: auto !important; display: block !important"><ins class="adsbygoogle ad-slot__unit" style="height:0px"></ins></aside></div>
+<div class="cas"><p>D8</p><aside class="ad-slot ad-slot--list-top" data-cas="D8" style="height: auto !important"><span class="ad-slot__label">Publicite</span><ins class="adsbygoogle ad-slot__unit" style="height:0px"></ins></aside></div>
+</section>

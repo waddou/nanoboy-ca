@@ -36,6 +36,33 @@
 		min-inline-size: 0;
 	}
 
+	/* — Le plancher, même si la grille saute — */
+	/* La piste de grille ci-dessus suffit tant que le conteneur reste en
+	   `display: grid`. Un pseudo-élément prend le relais dans le cas contraire :
+	   il n'existe pas dans le DOM, donc AdSense ne peut pas le cibler, et
+	   `display: block` est indispensable — un `::before` est `inline` par
+	   défaut, or `block-size` ne s'applique pas à un inline non remplacé.
+
+	   Banc d'essai (.cls-tools/banc-plancher.html), 8 cas confrontés aux
+	   comportements relevés en production :
+	     piste de grille seule        7/8 — tombe à 0 si `display:block !important`
+	     pseudo-élément seul          6/8 — tombe aussi, et casse si un élément
+	                                        s'ajoute dans le conteneur
+	     les deux + cellule partagée  8/8 */
+	.ad-slot::before {
+		grid-area: 1 / 1;
+		display: block;
+		block-size: var(--nb-ad-reserved-height);
+		content: "";
+	}
+
+	/* Tous les enfants partagent la cellule réservée, pas seulement l'unité :
+	   un élément ajouté au conteneur ne crée pas de seconde ligne sous le
+	   plancher. */
+	.ad-slot > * {
+		grid-area: 1 / 1;
+	}
+
 	/* — Listes (accueil, archives) : cartes pub aux positions 2 et 4 — */
 	/* Hauteur figée : 280px d'annonce (style inline de l'<ins>). Le rythme
 	   vertical vient du gap de .grid-cards, comme pour les cartes article. */
